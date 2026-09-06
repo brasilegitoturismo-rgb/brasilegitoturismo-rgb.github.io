@@ -416,27 +416,105 @@
 
     /* Anfitriões */
     .hosts { background: var(--paper); }
-    .hosts-card { display: grid; grid-template-columns: .75fr 1.25fr; min-height: 520px; box-shadow: var(--shadow); }
+    .hosts-card { display: grid; grid-template-columns: .85fr 1.15fr; min-height: 540px; box-shadow: var(--shadow); background: #fff; overflow: hidden; }
     .hosts-art {
       position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 470px;
+      min-height: 480px;
       background: var(--ink);
-      color: var(--gold-light);
       overflow: hidden;
     }
-    .hosts-art::before,
-    .hosts-art::after { content: ''; position: absolute; border: 1px solid rgba(198,161,91,.3); transform: rotate(45deg); }
-    .hosts-art::before { width: 320px; height: 320px; }
-    .hosts-art::after { width: 240px; height: 240px; }
-    .hosts-monogram { position: relative; z-index: 2; font-family: 'Cinzel', serif; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -.1em; }
-    .hosts-monogram span { color: var(--gold); font-size: .48em; vertical-align: middle; }
-    .hosts-caption { position: absolute; left: 2rem; right: 2rem; bottom: 2rem; z-index: 2; color: rgba(255,255,255,.5); text-align: center; font-size: .67rem; letter-spacing: .18em; text-transform: uppercase; }
+    .hosts-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      transition: transform .8s var(--ease);
+    }
+    .hosts-card:hover .hosts-art img { transform: scale(1.03); }
+    .hosts-art::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(17,16,14,.7) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hosts-caption { position: absolute; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; z-index: 2; color: rgba(255,255,255,.9); text-align: center; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,.6); }
     .hosts-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2.5rem, 6vw, 5.5rem); background: #fff; }
     .hosts-copy h2 { margin-bottom: 1.5rem; font-size: clamp(2.3rem, 4.2vw, 3.8rem); letter-spacing: -.035em; }
     .hosts-copy p { color: var(--muted); }
     .signature-quote { margin: 1.3rem 0 0; padding: 1.3rem 0 0 1.4rem; border-top: 1px solid var(--line); border-left: 2px solid var(--gold); color: var(--ink) !important; font-family: 'Cinzel', serif; font-size: 1.05rem; line-height: 1.65; }
+
+    /* Depoimentos */
+    .testimonials { background: var(--sand); border-top: 1px solid var(--line); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 980px; margin-inline: auto; }
+    .testimonial-card {
+      background: #fff;
+      padding: 2.2rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 35px rgba(31, 23, 13, .05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform .35s var(--ease), box-shadow .35s;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .testimonial-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-bottom: 1.2rem;
+      color: #df4538;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .testimonial-bubble {
+      position: relative;
+      background: #fbfbf9;
+      border: 1px solid rgba(31,27,23,.08);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-bubble p {
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: .6rem;
+    }
+    .testimonial-bubble .time {
+      display: block;
+      text-align: right;
+      font-size: .7rem;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sand);
+      border: 2px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .testimonial-author strong { display: block; color: var(--ink); font-size: .98rem; }
+    .testimonial-author span { color: var(--gold-dark); font-size: .74rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
 
     /* Roteiro */
     .itinerary { background: var(--sand-soft); }
@@ -544,7 +622,9 @@
       .journey-grid { grid-template-columns: 1fr; }
       .journey-image { min-height: 530px; width: min(86%, 650px); }
       .journey-seal { right: -2.5rem; }
-      .hosts-card { grid-template-columns: .85fr 1.15fr; }
+      .hosts-card { grid-template-columns: 1fr; }
+      .hosts-art { min-height: 420px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
       .cta-inner { grid-template-columns: 1fr; align-items: start; }
       .cta-action { text-align: left; }
       .faq-layout { grid-template-columns: 1fr; }
@@ -605,7 +685,7 @@
       .journey-seal { right: -1.2rem; bottom: 2rem; width: 108px; font-size: .58rem; }
       .journey-list li { grid-template-columns: 40px 1fr; gap: .8rem; }
       .hosts-card { grid-template-columns: 1fr; }
-      .hosts-art { min-height: 390px; }
+      .hosts-art { min-height: 420px; }
       .hosts-copy { padding: 2.3rem 1.6rem; }
       .timeline::before { left: 15px; }
       .timeline-item { grid-template-columns: 1fr; gap: 1rem; padding-left: 42px; padding-bottom: 2.4rem; }
@@ -648,6 +728,8 @@
       <nav id="nav" aria-label="Navegação principal">
         <a class="nav-link" href="#experiencia">A experiência</a>
         <a class="nav-link" href="#incluso">O que inclui</a>
+        <a class="nav-link" href="#anfitrioes">Anfitriões</a>
+        <a class="nav-link" href="#depoimentos">Depoimentos</a>
         <a class="nav-link" href="#roteiro">Roteiro</a>
         <a class="nav-link" href="#duvidas">Dúvidas</a>
         <a class="nav-cta" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Gostaria%20de%20consultar%20valores%20e%20vagas%20para%20o%20Egito%20Completo%202027." target="_blank" rel="noopener noreferrer">Consultar vagas <span aria-hidden="true">↗</span></a>
@@ -780,9 +862,9 @@
     <section class="section hosts" id="anfitrioes">
       <div class="container">
         <div class="hosts-card reveal">
-          <div class="hosts-art" aria-hidden="true">
-            <div class="hosts-monogram">J <span>&amp;</span> V</div>
-            <div class="hosts-caption">Brasil Egito Turismo · Desde o embarque</div>
+          <div class="hosts-art">
+            <img src="joao-e-vera.jpg" alt="João e Vera em frente à Esfinge no Egito" loading="lazy">
+            <div class="hosts-caption">João &amp; Vera · Anfitriões desde o Brasil</div>
           </div>
           <div class="hosts-copy">
             <span class="eyebrow">Seus anfitriões</span>
@@ -791,6 +873,48 @@
             <p>Estaremos ao seu lado durante toda a jornada, oferecendo acolhimento, suporte e segurança do embarque no Brasil ao retorno.</p>
             <p class="signature-quote">“Queremos apresentar o Egito como gostaríamos que alguém especial o apresentasse a nós.”</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Quem viaja conosco aprova</span>
+          <h2>Satisfação que nos inspira</h2>
+          <p>A experiência de quem já viveu essa travessia inesquecível pelo Egito com nossa equipe.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal">
+            <span class="testimonial-badge">❤️ Recomendação</span>
+            <div class="testimonial-bubble">
+              <p>“Viagem maravilhosa<br>Fiz e recomendo<br>Vale a pena!!!!!!”</p>
+              <span class="time">13:14</span>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">E</div>
+              <div>
+                <strong>Elioenai GD23</strong>
+                <span>Cliente satisfeita · Egito</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal delay-1">
+            <span class="testimonial-badge">❤️ Recomendação</span>
+            <div class="testimonial-bubble">
+              <p>“Eu também! Super recomendo!”</p>
+              <span class="time">13:15</span>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <strong>Mylena Azevedo</strong>
+                <span>Cliente satisfeita · Egito</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
