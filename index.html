@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Egito Completo 2027: 12 dias e 11 noites entre Cairo, Cruzeiro no Nilo, Luxor e Hurghada, com acompanhamento de João e Vera.">
+  <meta name="theme-color" content="#11100E">
+  <title>Egito Completo 2027 | Brasil Egito Turismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #11100e;
+      --ink-soft: #1a1815;
+      --sand: #f4efe5;
+      --sand-soft: #fbf8f2;
+      --paper: #fffdf9;
+      --gold: #c6a15b;
+      --gold-light: #ead39b;
+      --gold-dark: #96712f;
+      --clay: #7e452f;
+      --text: #211e1a;
+      --muted: #6e675f;
+      --line: rgba(31, 27, 23, 0.13);
+      --white-line: rgba(255,255,255,.15);
+      --whatsapp: #25d366;
+      --shadow: 0 24px 70px rgba(31, 23, 13, .13);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --header-h: 82px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: var(--sand-soft);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    ::selection { background: var(--gold); color: var(--ink); }
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    h1, h2, h3, h4, p { margin-top: 0; }
+    h1, h2, h3, h4 {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -5rem;
+      z-index: 9999;
+      background: var(--paper);
+      color: var(--ink);
+      padding: .8rem 1rem;
+      border-radius: .3rem;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: clamp(5rem, 9vw, 8.75rem) 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1.2rem;
+      color: var(--gold-dark);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 2rem; height: 1px; background: currentColor; }
+    .eyebrow.light { color: var(--gold-light); }
+    .section-heading { max-width: 790px; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+    .section-heading.center { margin-inline: auto; text-align: center; }
+    .section-heading.center .eyebrow::after { content: ''; width: 2rem; height: 1px; background: currentColor; }
+    .section-heading h2 {
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
+      letter-spacing: -.035em;
+    }
+    .section-heading p { max-width: 680px; margin-bottom: 0; color: var(--muted); font-size: 1.03rem; }
+    .section-heading.center p { margin-inline: auto; }
+
+    /* Cabeçalho */
+    .announcement {
+      position: relative;
+      z-index: 1001;
+      padding: .55rem 1rem;
+      background: var(--gold);
+      color: var(--ink);
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    header {
+      position: fixed;
+      top: 31px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.13);
+      transition: background .4s, height .4s, box-shadow .4s, top .4s;
+    }
+    header.scrolled {
+      top: 0;
+      height: 70px;
+      background: rgba(17,16,14,.96);
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: .9rem; }
+    .brand-mark {
+      width: 42px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      transform: rotate(45deg);
+    }
+    .brand-mark span { transform: rotate(-45deg); }
+    .brand-name { display: grid; line-height: 1.1; }
+    .brand-name strong { color: #fff; font-family: 'Cinzel', serif; font-size: .96rem; letter-spacing: .08em; }
+    .brand-name small { color: var(--gold-light); font-size: .61rem; letter-spacing: .19em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    .nav-link {
+      position: relative;
+      color: rgba(255,255,255,.78);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -.55rem;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .35s var(--ease);
+    }
+    .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .78rem 1rem;
+      border: 1px solid rgba(234,211,155,.6);
+      color: var(--gold-light);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: background .3s, color .3s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+    .menu-toggle { display: none; border: 0; padding: .5rem; background: none; color: #fff; cursor: pointer; }
+    .menu-toggle span { display: block; width: 25px; height: 1px; margin: 6px 0; background: currentColor; transition: transform .3s, opacity .3s; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding: calc(var(--header-h) + 9rem) 0 5.5rem;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(10,9,8,.92) 0%, rgba(10,9,8,.67) 45%, rgba(10,9,8,.18) 100%),
+        linear-gradient(0deg, rgba(10,9,8,.72) 0%, transparent 52%),
+        url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=2000&q=88') center 50% / cover no-repeat;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 85px 85px;
+      mask-image: linear-gradient(90deg, #000, transparent 70%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0;
+      height: 150px;
+      z-index: -1;
+      background: linear-gradient(transparent, rgba(17,16,14,.8));
+    }
+    .hero-content { max-width: 890px; }
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+      color: var(--gold-light);
+      font-size: .79rem;
+      font-weight: 700;
+      letter-spacing: .21em;
+      text-transform: uppercase;
+    }
+    .hero-kicker::before { content: ''; width: 3.2rem; height: 1px; background: var(--gold); }
+    .hero h1 {
+      margin: 0 0 1.2rem;
+      color: #fff;
+      font-size: clamp(4rem, 11vw, 9.3rem);
+      letter-spacing: -.065em;
+      line-height: .82;
+      text-wrap: balance;
+    }
+    .hero h1 span {
+      display: block;
+      margin-top: .35em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(234,211,155,.88);
+      font-size: .43em;
+      letter-spacing: .22em;
+    }
+    .hero-subtitle { max-width: 630px; margin-bottom: 2.2rem; color: rgba(255,255,255,.79); font-size: clamp(1.02rem, 2vw, 1.23rem); font-weight: 300; }
+    .hero-actions { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
+    .button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      min-height: 54px;
+      padding: .9rem 1.55rem;
+      overflow: hidden;
+      border: 1px solid transparent;
+      font-size: .79rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .3s var(--ease), background .3s, color .3s, border-color .3s;
+    }
+    .button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.28) 48%, transparent 72%);
+      transform: translateX(-130%);
+      transition: transform .75s var(--ease);
+    }
+    .button:hover::before { transform: translateX(130%); }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--gold); color: var(--ink); }
+    .button-primary:hover { background: var(--gold-light); }
+    .button-ghost { border-color: rgba(255,255,255,.38); color: #fff; }
+    .button-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+    .button svg { width: 18px; height: 18px; flex: none; }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: start;
+      gap: 0;
+      margin-top: 3.3rem;
+      color: rgba(255,255,255,.72);
+    }
+    .hero-meta-item { padding: 0 2rem; border-left: 1px solid var(--white-line); }
+    .hero-meta-item:first-child { padding-left: 0; border-left: 0; }
+    .hero-meta-item strong { display: block; color: #fff; font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 500; }
+    .hero-meta-item small { font-size: .72rem; letter-spacing: .06em; }
+    .scroll-cue {
+      position: absolute;
+      right: max(2rem, calc((100vw - 1180px) / 2));
+      bottom: 4rem;
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      color: rgba(255,255,255,.55);
+      font-size: .67rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+    .scroll-cue::after { content: ''; width: 1px; height: 54px; background: linear-gradient(var(--gold), transparent); animation: scrollLine 2s infinite; }
+
+    /* Faixa de números */
+    .facts { position: relative; z-index: 2; background: var(--ink); color: #fff; border-bottom: 1px solid rgba(198,161,91,.28); }
+    .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .fact { padding: 2rem clamp(1rem, 3vw, 2.5rem); border-right: 1px solid var(--white-line); }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; color: var(--gold-light); font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 500; }
+    .fact span { color: rgba(255,255,255,.58); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Introdução editorial */
+    .intro { position: relative; background: var(--paper); }
+    .intro::before {
+      content: '𓂀';
+      position: absolute;
+      top: 3rem;
+      right: 5vw;
+      color: rgba(198,161,91,.09);
+      font-size: clamp(7rem, 18vw, 15rem);
+      line-height: 1;
+    }
+    .intro-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .intro-label { padding-top: .65rem; }
+    .intro-copy h2 { margin-bottom: 2rem; font-size: clamp(2.5rem, 5.4vw, 5rem); letter-spacing: -.045em; }
+    .intro-copy h2 em { color: var(--gold-dark); font-style: normal; }
+    .intro-text { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; color: var(--muted); }
+    .intro-text p { margin-bottom: 0; }
+
+    /* Inclusões */
+    .inclusions { background: var(--sand); }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(31,27,23,.15); border: 1px solid rgba(31,27,23,.15); }
+    .feature-card {
+      position: relative;
+      min-height: 310px;
+      padding: 2.3rem;
+      background: var(--paper);
+      overflow: hidden;
+      transition: transform .45s var(--ease), background .4s, box-shadow .4s;
+    }
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .45s var(--ease);
+    }
+    .feature-card:hover { z-index: 2; transform: translateY(-7px); background: #fff; box-shadow: var(--shadow); }
+    .feature-card:hover::after { transform: scaleX(1); }
+    .feature-number { display: block; margin-bottom: 3rem; color: var(--gold); font-family: 'Cinzel', serif; font-size: .74rem; letter-spacing: .14em; }
+    .feature-card h3 { margin-bottom: 1rem; color: var(--ink); font-size: 1.2rem; }
+    .feature-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+    .feature-icon {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 38px;
+      height: 38px;
+      color: rgba(150,113,47,.7);
+    }
+
+    /* Jornada escura */
+    .journey { position: relative; background: var(--ink); color: #fff; overflow: hidden; }
+    .journey::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .24;
+      background: radial-gradient(circle at 90% 20%, rgba(198,161,91,.34), transparent 30%);
+    }
+    .journey-grid { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 8vw, 8rem); align-items: center; }
+    .journey-image {
+      position: relative;
+      min-height: 650px;
+      background:
+        linear-gradient(180deg, transparent 50%, rgba(17,16,14,.82)),
+        url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1000&q=86') 68% center / cover no-repeat;
+      box-shadow: 0 35px 90px rgba(0,0,0,.35);
+    }
+    .journey-image::before { content: ''; position: absolute; inset: 22px; border: 1px solid rgba(234,211,155,.42); pointer-events: none; }
+    .journey-seal {
+      position: absolute;
+      right: -3.5rem;
+      bottom: 3.5rem;
+      width: 132px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      box-shadow: 0 15px 40px rgba(0,0,0,.28);
+      animation: breathe 4s ease-in-out infinite;
+    }
+    .journey-content h2 { margin-bottom: 1.4rem; color: #fff; font-size: clamp(2.4rem, 5vw, 4.5rem); letter-spacing: -.04em; }
+    .journey-lead { margin-bottom: 2.5rem; color: rgba(255,255,255,.62); }
+    .journey-list { list-style: none; margin: 0; padding: 0; }
+    .journey-list li { display: grid; grid-template-columns: 48px 1fr; gap: 1.2rem; padding: 1.25rem 0; border-top: 1px solid var(--white-line); }
+    .journey-list li:last-child { border-bottom: 1px solid var(--white-line); }
+    .journey-list strong { color: var(--gold-light); font-family: 'Cinzel', serif; font-size: .8rem; letter-spacing: .08em; }
+    .journey-list h3 { margin: 0 0 .35rem; color: #fff; font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 600; }
+    .journey-list p { margin: 0; color: rgba(255,255,255,.54); font-size: .87rem; }
+
+    /* Anfitriões */
+    .hosts { background: var(--paper); }
+    .hosts-card { display: grid; grid-template-columns: .75fr 1.25fr; min-height: 520px; box-shadow: var(--shadow); }
+    .hosts-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 470px;
+      background: var(--ink);
+      color: var(--gold-light);
+      overflow: hidden;
+    }
+    .hosts-art::before,
+    .hosts-art::after { content: ''; position: absolute; border: 1px solid rgba(198,161,91,.3); transform: rotate(45deg); }
+    .hosts-art::before { width: 320px; height: 320px; }
+    .hosts-art::after { width: 240px; height: 240px; }
+    .hosts-monogram { position: relative; z-index: 2; font-family: 'Cinzel', serif; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -.1em; }
+    .hosts-monogram span { color: var(--gold); font-size: .48em; vertical-align: middle; }
+    .hosts-caption { position: absolute; left: 2rem; right: 2rem; bottom: 2rem; z-index: 2; color: rgba(255,255,255,.5); text-align: center; font-size: .67rem; letter-spacing: .18em; text-transform: uppercase; }
+    .hosts-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2.5rem, 6vw, 5.5rem); background: #fff; }
+    .hosts-copy h2 { margin-bottom: 1.5rem; font-size: clamp(2.3rem, 4.2vw, 3.8rem); letter-spacing: -.035em; }
+    .hosts-copy p { color: var(--muted); }
+    .signature-quote { margin: 1.3rem 0 0; padding: 1.3rem 0 0 1.4rem; border-top: 1px solid var(--line); border-left: 2px solid var(--gold); color: var(--ink) !important; font-family: 'Cinzel', serif; font-size: 1.05rem; line-height: 1.65; }
+
+    /* Roteiro */
+    .itinerary { background: var(--sand-soft); }
+    .timeline { position: relative; max-width: 960px; margin-inline: auto; }
+    .timeline::before { content: ''; position: absolute; left: 104px; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--gold), rgba(198,161,91,.1)); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 80px 1fr; gap: 3.8rem; padding-bottom: 3.7rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-marker { position: relative; padding-top: 1.1rem; color: var(--gold-dark); text-align: right; }
+    .timeline-marker strong { display: block; font-family: 'Cinzel', serif; font-size: 1.4rem; }
+    .timeline-marker span { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline-marker::after { content: ''; position: absolute; top: 1.35rem; right: -32px; width: 13px; height: 13px; border: 3px solid var(--sand-soft); border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .timeline-panel { padding: 2rem 2.2rem; background: var(--paper); border: 1px solid var(--line); transition: transform .35s var(--ease), box-shadow .35s; }
+    .timeline-panel:hover { transform: translateX(7px); box-shadow: 0 15px 45px rgba(31,23,13,.08); }
+    .timeline-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; }
+    .timeline-top h3 { margin: 0; color: var(--ink); font-size: 1.25rem; }
+    .date-pill { flex: none; padding: .36rem .7rem; background: var(--sand); color: var(--gold-dark); font-size: .7rem; font-weight: 700; letter-spacing: .05em; }
+    .timeline-panel > p { margin-bottom: 1.1rem; color: var(--muted); }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .timeline-tags span { padding: .34rem .65rem; border: 1px solid var(--line); color: var(--muted); font-size: .71rem; }
+    .timeline-tags .optional { border-color: rgba(126,69,47,.24); background: rgba(126,69,47,.07); color: var(--clay); }
+
+    /* CTA */
+    .cta-section { position: relative; padding: clamp(5rem, 10vw, 9rem) 0; background: var(--clay); color: #fff; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; opacity: .12; background-image: repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,.3) 25px 26px); }
+    .cta-inner { position: relative; display: grid; grid-template-columns: 1.4fr .6fr; gap: 3rem; align-items: end; }
+    .cta-inner h2 { max-width: 760px; margin-bottom: 1.2rem; color: #fff; font-size: clamp(2.5rem, 6vw, 5.25rem); letter-spacing: -.045em; }
+    .cta-inner p { max-width: 650px; margin-bottom: 0; color: rgba(255,255,255,.72); }
+    .cta-action { text-align: right; }
+    .cta-action .button { width: 100%; max-width: 290px; }
+    .cta-note { display: block; margin-top: .8rem; color: rgba(255,255,255,.58); font-size: .72rem; }
+
+    /* FAQ */
+    .faq { background: var(--paper); }
+    .faq-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(3rem, 8vw, 8rem); }
+    .faq-intro { position: sticky; top: 110px; align-self: start; }
+    .faq-intro h2 { margin-bottom: 1.2rem; font-size: clamp(2.2rem, 4vw, 3.8rem); }
+    .faq-intro p { color: var(--muted); }
+    .faq-list details { border-top: 1px solid var(--line); }
+    .faq-list details:last-child { border-bottom: 1px solid var(--line); }
+    .faq-list summary {
+      display: grid;
+      grid-template-columns: 1fr 34px;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.65rem 0;
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 600;
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; display: grid; place-items: center; width: 30px; aspect-ratio: 1; border: 1px solid var(--line); color: var(--gold-dark); font-size: 1.25rem; font-weight: 300; transition: transform .3s, background .3s; }
+    .faq-list details[open] summary::after { content: '−'; transform: rotate(180deg); background: var(--sand); }
+    .faq-list details p { max-width: 680px; margin: -0.35rem 3.5rem 1.7rem 0; color: var(--muted); font-size: .94rem; }
+
+    /* Rodapé */
+    footer { padding: 4.5rem 0 1.8rem; background: var(--ink); color: rgba(255,255,255,.57); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .75fr .75fr; gap: 4rem; padding-bottom: 3rem; }
+    .footer-brand { margin-bottom: 1.4rem; }
+    .footer-about p { max-width: 400px; font-size: .88rem; }
+    .footer-col h3 { margin-bottom: 1.2rem; color: #fff; font-family: 'Manrope', sans-serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+    .footer-col p, .footer-col a { display: block; margin-bottom: .55rem; font-size: .84rem; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 1.5rem; padding-top: 1.6rem; border-top: 1px solid var(--white-line); font-size: .72rem; }
+    .footer-bottom p { margin: 0; }
+
+    /* WhatsApp flutuante */
+    .whatsapp-fixed {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      min-height: 54px;
+      padding: .8rem 1.15rem;
+      border-radius: 99px;
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 14px 36px rgba(0,0,0,.24);
+      font-size: .78rem;
+      font-weight: 700;
+      transition: transform .3s var(--ease), box-shadow .3s;
+    }
+    .whatsapp-fixed::before { content: ''; position: absolute; inset: -5px; z-index: -1; border: 1px solid rgba(37,211,102,.55); border-radius: inherit; animation: pulse 2.5s infinite; }
+    .whatsapp-fixed:hover { transform: translateY(-4px); box-shadow: 0 19px 42px rgba(0,0,0,.3); }
+    .whatsapp-fixed svg { width: 24px; height: 24px; }
+
+    /* Revelação no scroll */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+
+    @keyframes scrollLine { 0%, 100% { transform: scaleY(.25); transform-origin: top; opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: .65; } 60% { transform: scale(1.14); opacity: 0; } }
+    @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+
+    @media (max-width: 980px) {
+      nav { gap: 1.2rem; }
+      .nav-link { display: none; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-grid { grid-template-columns: 1fr; }
+      .journey-image { min-height: 530px; width: min(86%, 650px); }
+      .journey-seal { right: -2.5rem; }
+      .hosts-card { grid-template-columns: .85fr 1.15fr; }
+      .cta-inner { grid-template-columns: 1fr; align-items: start; }
+      .cta-action { text-align: left; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-intro { position: static; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --header-h: 70px; }
+      .container { width: min(100% - 32px, 1180px); }
+      .announcement { padding: .5rem .75rem; font-size: .62rem; letter-spacing: .09em; }
+      header { top: 29px; }
+      .brand-mark { width: 37px; }
+      .brand-name strong { font-size: .8rem; }
+      .brand-name small { font-size: .53rem; }
+      .nav-cta { display: none; }
+      .menu-toggle { display: block; }
+      nav {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        background: rgba(17,16,14,.985);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .35s, visibility .35s;
+      }
+      nav.open { opacity: 1; visibility: visible; }
+      nav .nav-link { display: block; color: #fff; font-family: 'Cinzel', serif; font-size: 1.35rem; }
+      nav .nav-cta { display: inline-flex; margin-top: 1rem; }
+      .menu-toggle.open span:first-child { transform: translateY(7px) rotate(45deg); }
+      .menu-toggle.open span:nth-child(2) { opacity: 0; }
+      .menu-toggle.open span:last-child { transform: translateY(-7px) rotate(-45deg); }
+      .hero { min-height: 93svh; align-items: center; padding: calc(var(--header-h) + 7rem) 0 3.5rem; background-position: 58% center; }
+      .hero::before { background-size: 55px 55px; }
+      .hero h1 { font-size: clamp(3.7rem, 21vw, 6rem); }
+      .hero h1 span { font-size: .38em; letter-spacing: .16em; }
+      .hero-kicker { font-size: .66rem; letter-spacing: .16em; }
+      .hero-subtitle { font-size: .98rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; max-width: 380px; }
+      .button { width: 100%; }
+      .hero-meta { grid-template-columns: 1fr 1fr; row-gap: 1rem; margin-top: 2.4rem; }
+      .hero-meta-item { padding: 0 1rem; }
+      .hero-meta-item:nth-child(3) { grid-column: 1 / -1; padding-left: 0; border-left: 0; }
+      .scroll-cue { display: none; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      .fact { border-bottom: 1px solid var(--white-line); }
+      .fact:nth-child(2) { border-right: 0; }
+      .intro-grid, .intro-text { grid-template-columns: 1fr; }
+      .intro-grid { gap: 1.8rem; }
+      .intro-copy h2 { font-size: clamp(2.25rem, 11vw, 3.5rem); }
+      .cards-grid { grid-template-columns: 1fr; }
+      .feature-card { min-height: auto; padding: 2rem; }
+      .feature-number { margin-bottom: 2rem; }
+      .journey-image { min-height: 470px; width: calc(100% - 18px); }
+      .journey-seal { right: -1.2rem; bottom: 2rem; width: 108px; font-size: .58rem; }
+      .journey-list li { grid-template-columns: 40px 1fr; gap: .8rem; }
+      .hosts-card { grid-template-columns: 1fr; }
+      .hosts-art { min-height: 390px; }
+      .hosts-copy { padding: 2.3rem 1.6rem; }
+      .timeline::before { left: 15px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 1rem; padding-left: 42px; padding-bottom: 2.4rem; }
+      .timeline-marker { padding-top: 0; text-align: left; }
+      .timeline-marker strong, .timeline-marker span { display: inline; margin-right: .45rem; }
+      .timeline-marker::after { top: .35rem; left: -33px; right: auto; }
+      .timeline-panel { padding: 1.5rem; }
+      .timeline-panel:hover { transform: none; }
+      .timeline-top { align-items: flex-start; flex-direction: column; }
+      .cta-action .button { max-width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp-fixed { right: 15px; bottom: 15px; width: 55px; padding: 0; justify-content: center; }
+      .whatsapp-fixed span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <div class="announcement">Saída confirmada · 16 a 29 de março de 2027 · Grupo acompanhado desde o Brasil</div>
+
+  <header id="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Brasil Egito Turismo — início">
+        <span class="brand-mark" aria-hidden="true"><span>BE</span></span>
+        <span class="brand-name">
+          <strong>Brasil Egito</strong>
+          <small>Turismo</small>
+        </span>
+      </a>
+
+      <nav id="nav" aria-label="Navegação principal">
+        <a class="nav-link" href="#experiencia">A experiência</a>
+        <a class="nav-link" href="#incluso">O que inclui</a>
+        <a class="nav-link" href="#roteiro">Roteiro</a>
+        <a class="nav-link" href="#duvidas">Dúvidas</a>
+        <a class="nav-cta" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Gostaria%20de%20consultar%20valores%20e%20vagas%20para%20o%20Egito%20Completo%202027." target="_blank" rel="noopener noreferrer">Consultar vagas <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-kicker">Grupo exclusivo · Março 2027</div>
+          <h1 id="hero-title">Egito <span>Completo</span></h1>
+          <p class="hero-subtitle">Uma travessia monumental entre os mistérios dos faraós, a serenidade do Nilo e o azul cristalino do Mar Vermelho.</p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Gostaria%20de%20consultar%20valores%20e%20vagas%20para%20o%20Egito%20Completo%202027." target="_blank" rel="noopener noreferrer">
+              Quero conhecer o Egito
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-ghost" href="#roteiro">Descobrir o roteiro</a>
+          </div>
+
+          <div class="hero-meta" aria-label="Informações da viagem">
+            <div class="hero-meta-item"><strong>16–29 MAR</strong><small>Brasil · Egito · Brasil</small></div>
+            <div class="hero-meta-item"><strong>12 DIAS</strong><small>11 noites no Egito</small></div>
+            <div class="hero-meta-item"><strong>JOÃO &amp; VERA</strong><small>Acompanhamento pessoal</small></div>
+          </div>
+        </div>
+      </div>
+      <span class="scroll-cue" aria-hidden="true">Explore</span>
+    </section>
+
+    <section class="facts" aria-label="Destaques da viagem">
+      <div class="container facts-grid">
+        <div class="fact"><strong>12</strong><span>Dias de jornada</span></div>
+        <div class="fact"><strong>03</strong><span>Noites no Nilo</span></div>
+        <div class="fact"><strong>03</strong><span>Noites no Mar Vermelho</span></div>
+        <div class="fact"><strong>100%</strong><span>Guia em português</span></div>
+      </div>
+    </section>
+
+    <section class="section intro" id="experiencia">
+      <div class="container intro-grid">
+        <div class="intro-label reveal">
+          <span class="eyebrow">A experiência</span>
+        </div>
+        <div class="intro-copy reveal delay-1">
+          <h2>Não é apenas uma viagem. É o <em>Egito vivido por inteiro.</em></h2>
+          <div class="intro-text">
+            <p>Do primeiro encontro com as Pirâmides ao pôr do sol sobre o Nilo, cada etapa foi desenhada para revelar o Egito com profundidade, conforto e tempo para sentir.</p>
+            <p>Você viaja em grupo acompanhado desde o Brasil, com cuidado próximo, assistência local e especialistas que falam português durante toda a experiência.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inclusions" id="incluso">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Conforto em cada detalhe</span>
+          <h2>Uma jornada planejada para você aproveitar</h2>
+          <p>Logística, acompanhamento e experiências cuidadosamente coordenadas para que sua única preocupação seja viver cada momento.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="feature-card reveal">
+            <span class="feature-number">01 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 4l17 10v20L24 44 7 34V14L24 4zM7 14l17 10 17-10M24 24v20"/></svg>
+            <h3>Assistência VIP</h3>
+            <p>Recepção no desembarque internacional do Cairo e apoio durante os procedimentos de chegada e imigração.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <span class="feature-number">02 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M9 38V18l15-9 15 9v20M5 38h38M17 38V25h14v13M13 18h22"/></svg>
+            <h3>Egiptólogo em português</h3>
+            <p>Guias especialistas para transformar templos, tumbas e monumentos em histórias que fazem sentido e ficam na memória.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <span class="feature-number">03 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 33c6-5 12 5 18 0s12 5 18 0M9 28h30l-4-11H13L9 28zM17 17V9h14v8"/></svg>
+            <h3>Cruzeiro no Nilo</h3>
+            <p>Três noites com pensão completa, navegando entre Aswan e Luxor e visitando os grandes templos do Alto Egito.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-number">04 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="36" cy="12" r="5"/><path d="M5 36c7-7 13 7 20 0s12 5 18 0M8 29c7-7 12 5 18 0s10 3 15 0"/></svg>
+            <h3>Mar Vermelho all-inclusive</h3>
+            <p>Três noites de descanso em Hurghada, em resort à beira-mar com alimentação e bebidas inclusas.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <span class="feature-number">05 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 28l16-5V9c0-2 1-4 3-4s3 2 3 4v14l16 5v5l-16-2v8l6 3v2l-9-1-9 1v-2l6-3v-8L5 33v-5z"/></svg>
+            <h3>Voo doméstico incluso</h3>
+            <p>Trecho Cairo–Aswan e traslados em veículos modernos e climatizados ao longo do roteiro.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <span class="feature-number">06 / 06</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 40h32M12 40V22h24v18M17 22V13l7-6 7 6v9M19 29h10M19 34h10"/></svg>
+            <h3>Grandes monumentos</h3>
+            <p>Ingressos para Pirâmides, Esfinge, Grande Museu Egípcio, Karnak, Vale dos Reis e outros sítios do roteiro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" aria-labelledby="journey-title">
+      <div class="container journey-grid">
+        <div class="journey-image reveal" role="img" aria-label="Pirâmides do Egito ao entardecer">
+          <div class="journey-seal">Uma viagem<br>para toda<br>a vida</div>
+        </div>
+        <div class="journey-content reveal delay-1">
+          <span class="eyebrow light">Quatro experiências em uma</span>
+          <h2 id="journey-title">Cada cenário revela um novo Egito</h2>
+          <p class="journey-lead">Uma narrativa que muda de paisagem sem perder o ritmo — da energia do Cairo à quietude do deserto e ao azul do Mar Vermelho.</p>
+          <ol class="journey-list">
+            <li><strong>01</strong><div><h3>Cairo monumental</h3><p>Pirâmides, Esfinge, museus, Cairo histórico e bazares.</p></div></li>
+            <li><strong>02</strong><div><h3>O Nilo lendário</h3><p>Aswan, Philae, Kom Ombo e Edfu a bordo do cruzeiro.</p></div></li>
+            <li><strong>03</strong><div><h3>Luxor, o maior museu a céu aberto</h3><p>Vale dos Reis, Hatshepsut, Karnak e os Colossos de Mêmnon.</p></div></li>
+            <li><strong>04</strong><div><h3>Mar Vermelho</h3><p>Dias de descanso e águas cristalinas em Hurghada.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hosts" id="anfitrioes">
+      <div class="container">
+        <div class="hosts-card reveal">
+          <div class="hosts-art" aria-hidden="true">
+            <div class="hosts-monogram">J <span>&amp;</span> V</div>
+            <div class="hosts-caption">Brasil Egito Turismo · Desde o embarque</div>
+          </div>
+          <div class="hosts-copy">
+            <span class="eyebrow">Seus anfitriões</span>
+            <h2>Viaje com João e Vera</h2>
+            <p>Para nós, apresentar o Egito vai muito além de organizar uma viagem. É receber cada viajante como família, cuidar dos detalhes práticos e compartilhar a paixão por essa terra milenar.</p>
+            <p>Estaremos ao seu lado durante toda a jornada, oferecendo acolhimento, suporte e segurança do embarque no Brasil ao retorno.</p>
+            <p class="signature-quote">“Queremos apresentar o Egito como gostaríamos que alguém especial o apresentasse a nós.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section itinerary" id="roteiro">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Itinerário</span>
+          <h2>Do Cairo ao Mar Vermelho</h2>
+          <p>Um resumo da jornada. O roteiro completo, com todos os serviços e condições, está disponível com nossa equipe.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"><strong>01–02</strong><span>Dias</span></div>
+            <div class="timeline-panel">
+              <div class="timeline-top"><h3>Cairo &amp; as grandes Pirâmides</h3><span class="date-pill">17–18 MAR</span></div>
+              <p>Chegada com assistência VIP, Pirâmides de Gizé, Esfinge, almoço local e visita ao Grande Museu Egípcio.</p>
+              <div class="timeline-tags"><span>Cairo</span><span>Gizé</span><span>GEM</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"><strong>03–05</strong><span>Dias</span></div>
+            <div class="timeline-panel">
+              <div class="timeline-top"><h3>Aswan &amp; Cruzeiro no Nilo</h3><span class="date-pill">19–21 MAR</span></div>
+              <p>Voo para Aswan, Philae, Obelisco Inacabado, feluca e navegação por Kom Ombo, Edfu e a eclusa de Esna.</p>
+              <div class="timeline-tags"><span>Aswan</span><span>Philae</span><span>Kom Ombo</span><span>Edfu</span><span class="optional">Abu Simbel opcional</span><span class="optional">Vila Núbia opcional</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"><strong>06–08</strong><span>Dias</span></div>
+            <div class="timeline-panel">
+              <div class="timeline-top"><h3>Luxor &amp; Mar Vermelho</h3><span class="date-pill">22–24 MAR</span></div>
+              <p>Vale dos Reis, Templo de Hatshepsut, Colossos de Mêmnon e viagem para o resort all-inclusive em Hurghada.</p>
+              <div class="timeline-tags"><span>Luxor</span><span>Vale dos Reis</span><span>Hurghada</span><span class="optional">Balão opcional</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"><strong>09–12</strong><span>Dias</span></div>
+            <div class="timeline-panel">
+              <div class="timeline-top"><h3>Hurghada &amp; Cairo histórico</h3><span class="date-pill">25–28 MAR</span></div>
+              <p>Tempo livre no Mar Vermelho, retorno ao Cairo, Khan El Khalili, Igreja da Caverna, Cidadela de Saladino, Cairo Copta e embarque de retorno.</p>
+              <div class="timeline-tags"><span>Mar Vermelho</span><span>Khan El Khalili</span><span>Cairo Copta</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:3.5rem" class="reveal">
+          <a class="button button-primary" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Gostaria%20de%20receber%20o%20roteiro%20completo%20em%20PDF%20e%20as%20informa%C3%A7%C3%B5es%20de%20valores." target="_blank" rel="noopener noreferrer">Receber roteiro completo <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner reveal">
+        <div>
+          <span class="eyebrow light">Grupo exclusivo · Vagas limitadas</span>
+          <h2>Seu encontro com o Egito começa aqui.</h2>
+          <p>Converse diretamente com João e Vera para consultar valores, condições de pagamento e disponibilidade.</p>
+        </div>
+        <div class="cta-action">
+          <a class="button button-primary" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Quero%20saber%20mais%20sobre%20o%20grupo%20Egito%20Completo%20de%20mar%C3%A7o%20de%202027." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">↗</span></a>
+          <small class="cta-note">Atendimento pessoal, sem compromisso.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="duvidas">
+      <div class="container faq-layout">
+        <div class="faq-intro reveal">
+          <span class="eyebrow">Informações úteis</span>
+          <h2>Dúvidas frequentes</h2>
+          <p>Se a sua pergunta não estiver aqui, fale conosco. Teremos prazer em explicar cada detalhe.</p>
+        </div>
+
+        <div class="faq-list reveal delay-1">
+          <details>
+            <summary>Como funciona o visto para o Egito?</summary>
+            <p>O visto turístico é obtido na chegada ao Aeroporto do Cairo. Nossa equipe local oferece assistência durante o desembarque e os procedimentos de imigração.</p>
+          </details>
+          <details>
+            <summary>A passagem aérea internacional está inclusa?</summary>
+            <p>O voo doméstico Cairo–Aswan está incluso no programa terrestre. A passagem internacional é contratada separadamente, com nossa assessoria para reserva, emissão e melhores opções de conexão.</p>
+          </details>
+          <details>
+            <summary>Posso viajar sozinho ou sozinha?</summary>
+            <p>Sim. Você pode escolher acomodação individual, mediante acréscimo de apartamento single, ou consultar a possibilidade de compartilhar um quarto duplo com outro participante do mesmo sexo.</p>
+          </details>
+          <details>
+            <summary>Quais documentos são necessários?</summary>
+            <p>Passaporte com validade mínima de seis meses além da data de entrada no Egito e Certificado Internacional de Vacinação ou Profilaxia contra a febre amarela.</p>
+          </details>
+          <details>
+            <summary>Como recebo valores e condições de pagamento?</summary>
+            <p>Como tarifas aéreas e câmbio podem variar, envie uma mensagem pelo WhatsApp. João e Vera apresentarão a condição atualizada e explicarão cada etapa do pagamento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand footer-brand" href="#inicio">
+            <span class="brand-mark" aria-hidden="true"><span>BE</span></span>
+            <span class="brand-name"><strong>Brasil Egito</strong><small>Turismo</small></span>
+          </a>
+          <p>Viagens culturais em grupos acompanhados, com atendimento próximo e especialistas em português.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contato</h3>
+          <a href="https://wa.me/5517991054452" target="_blank" rel="noopener noreferrer">+55 17 99105-4452</a>
+          <a href="mailto:brasilegitoturismo@gmail.com">brasilegitoturismo@gmail.com</a>
+        </div>
+        <div class="footer-col">
+          <h3>Informações</h3>
+          <p>Rod. Luiz Carlos Brandolezi, km 07</p>
+          <p>Potirendaba · SP</p>
+          <p>CNPJ 25.043.762/0001-04</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Brasil Egito Turismo. Todos os direitos reservados.</p>
+        <p>Egito com cuidado, história e presença.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fixed" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Egito%202027." target="_blank" rel="noopener noreferrer" aria-label="Falar com João e Vera no WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4a11.5 11.5 0 1 1 9.4 5.4zm6.3-8.6c-.3-.2-2-.1-2.3-.2-.3 0-.5.2-.7.5s-.8 1-.9 1.2c-.2.2-.4.2-.7.1a9 9 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5a.6.6 0 0 0 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7c0 1.6 1.2 3.1 1.4 3.3.1.3 2.3 3.6 5.6 5 3.3 1.4 3.3.9 3.9.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>
+    <span>Fale com João e Vera</span>
+  </a>
+
+  <script>
+    (() => {
+      const header = document.querySelector('#header');
+      const menu = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#nav');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const setHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
+      setHeader();
+      window.addEventListener('scroll', setHeader, { passive: true });
+
+      const closeMenu = () => {
+        nav.classList.remove('open');
+        menu.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'Abrir menu');
+        document.body.classList.remove('menu-open');
+      };
+
+      menu.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        menu.classList.toggle('open', isOpen);
+        menu.setAttribute('aria-expanded', String(isOpen));
+        menu.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', isOpen);
+      });
+
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
+        document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+      } else {
+        document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+      }
+
+      document.querySelectorAll('.faq-list details').forEach(item => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
+          document.querySelectorAll('.faq-list details').forEach(other => {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
