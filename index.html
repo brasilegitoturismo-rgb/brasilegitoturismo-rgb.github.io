@@ -208,6 +208,7 @@
       font-weight: 600;
       letter-spacing: .08em;
       text-transform: uppercase;
+      white-space: nowrap; /* Evita quebra de palavras no menu */
     }
     .nav-link::after {
       content: '';
@@ -944,8 +945,7 @@
     }
 
     @media (max-width: 980px) {
-      nav { gap: 1.2rem; }
-      .nav-link { display: none; }
+      nav { gap: 1rem; } /* Ajuste de gap para que os links caibam perfeitamente */
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
       .journey-grid { grid-template-columns: 1fr; }
       .journey-image { min-height: 530px; width: min(86%, 650px); }
@@ -1108,8 +1108,6 @@
         <a class="nav-link" href="#roteiro">Roteiro</a>
         <a class="nav-link" href="#investimento">Investimento</a>
         <a class="nav-link" href="#duvidas">Dúvidas</a>
-        <!-- CTA HEADER (PDF) -->
-        <a class="nav-cta btn-whatsapp-track" data-source="header" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Gostaria%20de%20receber%20o%20roteiro%20em%20PDF%20do%20Egito%202027." target="_blank" rel="noopener noreferrer">Baixar Roteiro PDF <span aria-hidden="true">↗</span></a>
       </nav>
 
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
