@@ -391,9 +391,9 @@
     .intro-text { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; color: var(--muted); }
     .intro-text p { margin-bottom: 0; }
 
-    /* Inclusões */
+    /* Inclusões - Cards Ajustados */
     .inclusions { background: var(--sand); }
-    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(31,27,23,.15); border: 1px solid rgba(31,27,23,.15); }
+    .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(31,27,23,.15); border: 1px solid rgba(31,27,23,.15); }
     .feature-card {
       position: relative;
       min-height: 310px;
@@ -426,6 +426,10 @@
       width: 38px;
       height: 38px;
       color: rgba(150,113,47,.7);
+    }
+    
+    @media (max-width: 1100px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* Jornada escura */
@@ -635,6 +639,96 @@
     .timeline-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
     .timeline-tags span { padding: .34rem .65rem; border: 1px solid var(--line); color: var(--muted); font-size: .71rem; }
     .timeline-tags .optional { border-color: rgba(126,69,47,.24); background: rgba(126,69,47,.07); color: var(--clay); }
+    
+    /* ========================================================
+       NOVA SEÇÃO: HOTÉIS INCLUÍDOS
+    ======================================================== */
+    .hotels-section { background: var(--sand); border-top: 1px solid var(--line); }
+    .hotels-wrapper { display: flex; flex-direction: column; gap: clamp(4rem, 8vw, 7rem); margin-top: 4rem; }
+    
+    .hotel-block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 5rem); align-items: center; }
+    .hotel-block:nth-child(even) { direction: rtl; } 
+    .hotel-block:nth-child(even) > * { direction: ltr; }
+    
+    .hotel-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .hotel-img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(31,23,13,.08);
+      transition: transform .5s var(--ease);
+    }
+    .hotel-img:hover { transform: scale(1.02); }
+    .hotel-gallery .hotel-img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+    }
+    .hotel-gallery .hotel-img:not(:first-child) {
+      aspect-ratio: 4 / 3;
+    }
+    
+    .hotel-info h3 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: .4rem; letter-spacing: -.03em; color: var(--ink); }
+    .hotel-subtitle { display: block; font-family: 'Cinzel', serif; color: var(--gold-dark); font-size: 1.1rem; margin-bottom: 1.5rem; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; }
+    .hotel-info p { color: var(--muted); margin-bottom: 1.5rem; }
+    
+    .hotel-highlight {
+      background: rgba(198,161,91,.1);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.4rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hotel-highlight span { color: var(--ink); font-size: .95rem; line-height: 1.5; display: block; }
+    .hotel-highlight strong { color: var(--gold-dark); }
+    
+    .hotel-tags { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+    .hotel-tag { padding: .4rem .8rem; background: var(--gold); color: var(--ink); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; }
+
+    /* TUDO INCLUSO (LISTA COMPLETA) */
+    .full-inclusions { background: var(--paper); border-top: 1px solid var(--line); }
+    .checklist-grid { max-width: 960px; margin: 0 auto 3.5rem; }
+    .elegant-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem 2.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .elegant-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.02rem;
+      color: var(--ink);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .elegant-checklist li svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    .elegant-checklist li b, .elegant-checklist li strong { font-weight: 700; color: var(--gold-dark); }
+    .transition-phrase {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--gold-dark);
+      line-height: 1.5;
+      padding: 2.2rem;
+      background: var(--sand);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+    }
 
     /* SEÇÃO COMERCIAL: INVESTIMENTO TRANSPARENTE */
     .pricing-section {
@@ -845,6 +939,10 @@
     .delay-1 { transition-delay: .1s; }
     .delay-2 { transition-delay: .2s; }
 
+    @media (max-width: 1100px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
     @media (max-width: 980px) {
       nav { gap: 1.2rem; }
       .nav-link { display: none; }
@@ -861,6 +959,32 @@
       .faq-layout { grid-template-columns: 1fr; }
       .faq-intro { position: static; }
       .trust-banner { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 2rem; }
+      
+      /* Ajustes Responsivos da Nova Seção de Hotéis */
+      .hotel-block { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hotel-block:nth-child(even) { direction: ltr; }
+      .hotel-gallery { 
+        display: flex; 
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        gap: 1rem; 
+        padding-bottom: 1.5rem; 
+        margin-right: -28px; /* Offset para ignorar o padding lateral do container no mobile */
+        padding-right: 28px;
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+      }
+      .hotel-gallery::-webkit-scrollbar { display: none; }
+      .hotel-gallery .hotel-img:first-child,
+      .hotel-gallery .hotel-img:not(:first-child) { 
+        flex: 0 0 85%; 
+        aspect-ratio: 4/3; 
+        scroll-snap-align: center; 
+      }
+    }
+
+    @media (max-width: 860px) {
+      .elegant-checklist { grid-template-columns: 1fr; gap: 1rem; }
     }
 
     @media (max-width: 720px) {
@@ -922,6 +1046,8 @@
       .cards-grid { grid-template-columns: 1fr; }
       .feature-card { min-height: auto; padding: 2rem; }
       .feature-number { margin-bottom: 2rem; }
+      .transition-phrase { font-size: 1.15rem; padding: 1.8rem; }
+      .transition-phrase p { margin-bottom: 0; }
       .journey-image { min-height: 470px; width: calc(100% - 18px); }
       .journey-seal { right: -1.2rem; bottom: 2rem; width: 108px; font-size: .58rem; }
       .journey-list li { grid-template-columns: 40px 1fr; gap: .8rem; }
@@ -936,6 +1062,10 @@
       .timeline-panel { padding: 1.5rem; }
       .timeline-panel:hover { transform: none; }
       .timeline-top { align-items: flex-start; flex-direction: column; }
+      
+      .hotel-info h3 { font-size: 1.8rem; }
+      .hotel-gallery { margin-right: -14px; padding-right: 14px; }
+      
       .cta-action .button { max-width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; }
@@ -1053,40 +1183,52 @@
 
         <div class="cards-grid">
           <article class="feature-card reveal">
-            <span class="feature-number">01 / 06</span>
+            <span class="feature-number">01 / 08</span>
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3 3-3-1-2 2 5 2 2 5 2-2-1-3 3-3 4 6 1.2-.7c.4-.2.7-.6.6-1.1z"/></svg>
+            <h3>Voo internacional incluso</h3>
+            <p>Passagens aéreas internacionais de ida e volta, saindo do Brasil com destino ao Egito, conforme os voos programados para o grupo.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <span class="feature-number">02 / 08</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 28l16-5V9c0-2 1-4 3-4s3 2 3 4v14l16 5v5l-16-2v8l6 3v2l-9-1-9 1v-2l6-3v-8L5 33v-5z"/></svg>
+            <h3>Voo doméstico incluso</h3>
+            <p>Trecho aéreo Cairo–Aswan incluído, permitindo aproveitar melhor o tempo da viagem e seguir confortavelmente para o início do Cruzeiro pelo Nilo.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <span class="feature-number">03 / 08</span>
             <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 4l17 10v20L24 44 7 34V14L24 4zM7 14l17 10 17-10M24 24v20"/></svg>
             <h3>Assistência VIP</h3>
             <p>Recepção no desembarque internacional do Cairo e apoio durante os procedimentos de chegada e imigração.</p>
           </article>
-          <article class="feature-card reveal delay-1">
-            <span class="feature-number">02 / 06</span>
+          <article class="feature-card reveal">
+            <span class="feature-number">04 / 08</span>
             <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M9 38V18l15-9 15 9v20M5 38h38M17 38V25h14v13M13 18h22"/></svg>
             <h3>Egiptólogo em português</h3>
             <p>Guias especialistas para transformar templos, tumbas e monumentos em histórias que fazem sentido e ficam na memória.</p>
           </article>
-          <article class="feature-card reveal delay-2">
-            <span class="feature-number">03 / 06</span>
+          <article class="feature-card reveal delay-1">
+            <span class="feature-number">05 / 08</span>
             <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 33c6-5 12 5 18 0s12 5 18 0M9 28h30l-4-11H13L9 28zM17 17V9h14v8"/></svg>
             <h3>Cruzeiro no Nilo</h3>
             <p>Três noites com pensão completa, navegando entre Aswan e Luxor e visitando os grandes templos do Alto Egito.</p>
           </article>
-          <article class="feature-card reveal">
-            <span class="feature-number">04 / 06</span>
+          <article class="feature-card reveal delay-2">
+            <span class="feature-number">06 / 08</span>
             <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="36" cy="12" r="5"/><path d="M5 36c7-7 13 7 20 0s12 5 18 0M8 29c7-7 12 5 18 0s10 3 15 0"/></svg>
             <h3>Mar Vermelho all-inclusive</h3>
             <p>Três noites de descanso em Hurghada, em resort à beira-mar com alimentação e bebidas inclusas.</p>
           </article>
-          <article class="feature-card reveal delay-1">
-            <span class="feature-number">05 / 06</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 28l16-5V9c0-2 1-4 3-4s3 2 3 4v14l16 5v5l-16-2v8l6 3v2l-9-1-9 1v-2l6-3v-8L5 33v-5z"/></svg>
-            <h3>Voo doméstico incluso</h3>
-            <p>Trecho Cairo–Aswan e traslados em veículos modernos e climatizados ao longo do roteiro.</p>
-          </article>
-          <article class="feature-card reveal delay-2">
-            <span class="feature-number">06 / 06</span>
+          <article class="feature-card reveal">
+            <span class="feature-number">07 / 08</span>
             <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 40h32M12 40V22h24v18M17 22V13l7-6 7 6v9M19 29h10M19 34h10"/></svg>
             <h3>Grandes monumentos</h3>
             <p>Ingressos para Pirâmides, Esfinge, Grande Museu Egípcio, Karnak, Vale dos Reis e outros sítios do roteiro.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <span class="feature-number">08 / 08</span>
+            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 8c-9 0-16 7-17 16h34C40 15 33 8 24 8zM4 26h40M24 8V4M20 4h8M9 30v4c0 3 2 6 6 6h18c4 0 6-3 6-6v-4"/></svg>
+            <h3>10 Refeições Incluídas</h3>
+            <p>6 almoços e 4 jantares durante os passeios, além da pensão completa no Cruzeiro e sistema All-Inclusive em Hurghada.</p>
           </article>
         </div>
       </div>
@@ -1248,6 +1390,109 @@
     </section>
 
     <!-- ========================================================
+       NOVA SEÇÃO: HOTÉIS INCLUÍDOS
+    ======================================================== -->
+    <section class="section hotels-section" id="hoteis">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Acomodações</span>
+          <h2>HOTÉIS INCLUÍDOS NA SUA VIAGEM</h2>
+          <p>Conforto no Cairo, uma experiência inesquecível navegando pelo Nilo e dias de descanso às margens do Mar Vermelho.</p>
+        </div>
+
+        <div class="hotels-wrapper">
+          <!-- CAIRO -->
+          <article class="hotel-block reveal">
+            <div class="hotel-gallery">
+              <img src="images/QUARTO - AZAL.jpg" alt="Quarto confortável no Azal Pyramids Hotel no Cairo" class="hotel-img" loading="lazy">
+              <img src="images/PISCINA - AZAL.jpg" alt="Piscina e área de lazer do Azal Pyramids Hotel" class="hotel-img" loading="lazy">
+              <img src="images/RESTAURANTE - AZAL.jpg" alt="Restaurante e área comum do Azal Pyramids Hotel" class="hotel-img" loading="lazy">
+            </div>
+            <div class="hotel-info">
+              <span class="hotel-subtitle">CAIRO — AZAL PYRAMIDS HOTEL</span>
+              <h3>Conforto no Cairo</h3>
+              <p>Hospedagem com ampla piscina, spa, restaurante, lounge e ambientes confortáveis — um lugar agradável para descansar depois de um dia explorando as maravilhas do Cairo.</p>
+            </div>
+          </article>
+
+          <!-- NILO -->
+          <article class="hotel-block reveal delay-1">
+            <div class="hotel-gallery">
+              <img src="images/SUNDECK - SOLARIS.jpg" alt="Sun deck e piscina do Cruzeiro H/S Solaris II no Rio Nilo" class="hotel-img" loading="lazy">
+              <img src="images/CABINE - SOLARIS.jpg" alt="Cabine com varanda privativa no Cruzeiro Solaris II" class="hotel-img" loading="lazy">
+              <img src="images/LOUGE - SOLARIS.jpg" alt="Lounge elegante no interior do Cruzeiro Solaris II" class="hotel-img" loading="lazy">
+            </div>
+            <div class="hotel-info">
+              <span class="hotel-subtitle">RIO NILO — SOLARIS II</span>
+              <h3>Navegue pelo Nilo em um cruzeiro 5 estrelas</h3>
+              <div class="hotel-highlight">
+                <span><strong>Todas as 74 cabines do Solaris II possuem varanda privativa, permitindo contemplar o Nilo diretamente da sua cabine.</strong></span>
+              </div>
+              <p>O navio também conta com piscina no sun deck, restaurante e lounge para tornar os dias de navegação parte inesquecível da viagem.</p>
+            </div>
+          </article>
+
+          <!-- HURGHADA -->
+          <article class="hotel-block reveal delay-2">
+            <div class="hotel-gallery">
+              <img src="images/VISTA GERAL - AMC.jpg" alt="Vista geral do resort e praia do Mar Vermelho no AMC Royal Hotel" class="hotel-img" loading="lazy">
+              <img src="images/QUARTO - AMC.jpg" alt="Quarto confortável com vista no AMC Royal Hotel" class="hotel-img" loading="lazy">
+              <img src="images/LAZER - AMC.jpg" alt="Área de piscinas e lazer do AMC Royal Hotel & Spa" class="hotel-img" loading="lazy">
+            </div>
+            <div class="hotel-info">
+              <span class="hotel-subtitle">MAR VERMELHO — AMC ROYAL HOTEL & SPA</span>
+              <h3>All-Inclusive às margens do Mar Vermelho</h3>
+              <p>Resort à beira-mar em Hurghada, com praia privativa de areia, piscinas, spa e quartos com varanda ou pátio privativo. Três noites para aproveitar o Mar Vermelho com conforto e sistema All-Inclusive.</p>
+              <div class="hotel-tags">
+                <span class="hotel-tag">Praia Privativa</span>
+                <span class="hotel-tag">All-Inclusive</span>
+                <span class="hotel-tag">Mar Vermelho</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: TUDO INCLUSO (LISTA COMPLETA) -->
+    <section class="section full-inclusions" id="tudo-incluso">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Tudo o que está incluído</span>
+          <h2>UMA VIAGEM COMPLETA.<br>VOCÊ SÓ PRECISA VIVER O EGITO.</h2>
+          <p>Veja tudo o que já está incluído na sua experiência de 12 dias pelo Egito.</p>
+        </div>
+        
+        <div class="checklist-grid reveal delay-1">
+          <ul class="elegant-checklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Passagens aéreas internacionais</strong> de ida e volta</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Voo doméstico</strong> Cairo–Aswan</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Hospedagem no Cairo com café da manhã</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Cruzeiro pelo Rio Nilo</strong> com pensão completa</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Resort em <strong>Hurghada</strong>, no Mar Vermelho, com sistema <strong>All-Inclusive</strong></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Assistência VIP na chegada ao Aeroporto Internacional do Cairo</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Guia egiptólogo falando português durante os passeios</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Acompanhamento e assistência durante a programação</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Traslados e transporte terrestre conforme o roteiro</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Passeios e visitas previstos no roteiro</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Ingressos das atrações previstas no programa, incluindo o <strong>Grande Museu Egípcio</strong></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>10 refeições incluídas durante os passeios</strong> — 6 almoços e 4 jantares</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Pensão completa</strong> durante o Cruzeiro pelo Nilo</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Sistema <strong>All-Inclusive</strong> durante a estadia no resort em Hurghada</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Água e bebidas durante os deslocamentos conforme a programação</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Wi-Fi no veículo durante os deslocamentos, quando disponível</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Visto de entrada no Egito</strong> incluído</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span><strong>Gorjetas obrigatórias da operação</strong> incluídas</span></li>
+          </ul>
+        </div>
+        
+        <div class="transition-phrase reveal delay-2">
+          <p>Do embarque no Brasil aos grandes monumentos do Egito, cuidamos dos principais detalhes para que você aproveite cada momento da viagem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
        SEÇÃO COMERCIAL: INVESTIMENTO TRANSPARENTE
     ======================================================== -->
     <section class="section pricing-section" id="investimento">
@@ -1353,7 +1598,7 @@
         <div class="faq-list reveal delay-1">
           <details>
             <summary>Como funciona o visto para o Egito?</summary>
-            <p>O visto turístico é obtido na chegada ao Aeroporto do Cairo. Nossa equipe local oferece assistência durante o desembarque e os procedimentos de imigração.</p>
+            <p>O visto de entrada no Egito já está incluído no pacote. O processo é realizado na chegada ao Aeroporto do Cairo, onde nossa equipe local oferece assistência VIP durante o desembarque e os procedimentos de imigração.</p>
           </details>
           <details>
             <summary>A passagem aérea internacional está inclusa?</summary>
