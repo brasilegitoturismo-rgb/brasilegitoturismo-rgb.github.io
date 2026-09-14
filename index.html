@@ -1173,19 +1173,36 @@
         });
       });
 
-      // DISPARO DE EVENTOS ANALYTICS (GA4 & META PIXEL) NO ÚNICO BOTÃO DE WHATSAPP
+      // DISPARO DE EVENTOS ANALYTICS (GA4 & META PIXEL) NO BOTÃO DE WHATSAPP
       document.querySelectorAll('.btn-whatsapp-track').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (event) => {
+          const whatsappUrl = btn.href;
+
+          // Evita que o navegador abra o WhatsApp antes de o evento ser enviado.
+          event.preventDefault();
+
           if (typeof gtag === 'function') {
             gtag('event', 'whatsapp_click', {
               event_category: 'engagement',
               event_label: 'whatsapp_floating',
-              value: 1
+              value: 1,
+              transport_type: 'beacon'
             });
           }
+
           if (typeof fbq === 'function') {
+            // Evento padrão para otimização de campanhas.
             fbq('track', 'Contact');
+            // Evento específico para sabermos quantos cliques foram para o WhatsApp.
+            fbq('trackCustom', 'WhatsAppClick', {
+              location: 'floating_button'
+            });
           }
+
+          // Pequeno atraso para dar tempo ao GA4/Meta de enviar os eventos.
+          setTimeout(() => {
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+          }, 400);
         });
       });
     })();
