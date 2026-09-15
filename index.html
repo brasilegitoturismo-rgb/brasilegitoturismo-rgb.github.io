@@ -276,29 +276,32 @@
     /* Hero Editorial */
     .hero {
       position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: auto;
       text-align: center;
-      color: var(--paper);
+      color: var(--ink);
       overflow: hidden;
-      padding: 6rem 1rem 4rem;
+      padding: 0;
     }
     .hero .bg {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
+      position: relative;
+      width: 100%;
+      height: min(72svh, 760px);
       object-fit: cover;
       object-position: center 30%;
     }
-    .hero .veil {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(10,9,8,.55) 0%, rgba(10,9,8,.45) 40%, rgba(10,9,8,.85) 100%);
-    }
-    .hero-content { 
-      position: relative; z-index: 1; max-width: 46rem; display: flex; flex-direction: column; align-items: center; 
-      background-color: rgba(255, 253, 245, 0.45); backdrop-filter: blur(2px); padding: 3rem 1.5rem 3.2rem;
-      box-shadow: inset 0 0 80px rgba(140, 101, 31, 0.08); border-bottom: 1px solid var(--line);
+    .hero .veil { display: none; }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 46rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem 3.2rem;
+      background: transparent;
+      box-shadow: none;
+      border-bottom: 0;
     }
     .hero-kicker {
       font-family: var(--display);
@@ -618,7 +621,7 @@
       .menu-toggle.open span:nth-child(2) { opacity: 0; }
       .menu-toggle.open span:last-child { transform: translateY(-7px) rotate(-45deg); }
       
-      .hero { padding: calc(var(--header-h) + 3.5rem) 0 3rem; }
+      .hero { padding: 0; }
       .hero .bg { object-position: center 5%; }
       #hero-title { font-size: clamp(3.5rem, 15vw, 4.5rem); margin-bottom: .5rem; }
       .hero-kicker { font-size: .75rem; margin-bottom: 1rem; }
@@ -685,10 +688,7 @@
         <a class="nav-link" href="#hoteis">Hotéis</a>
         <a class="nav-link" href="#investimento">Investimento</a>
         <a class="nav-link" href="#duvidas">Dúvidas</a>
-        <a href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Vera!%20Vim%20pelo%20site%20da%20Brasil%20Egito%20Turismo." target="_blank" class="btn btn-wa nav-mobile-cta btn-whatsapp-track">Falar com a Vera</a>
       </nav>
-
-      <a href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Vera!%20Vim%20pelo%20site%20da%20Brasil%20Egito%20Turismo." target="_blank" class="btn nav-cta btn-whatsapp-track" data-wa="header">Falar com a Vera</a>
       
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
@@ -908,7 +908,7 @@
 
           <article class="testimonial-card reveal">
             <div class="testimonial-bubble">
-              <p>Excelente trabalho prestado por João Ferrari e Vera Barcelos. A viagem foi perfeita, fomos muito bem assistidos desde o primeiro contato. Atendimento impecável.</p>
+              <p>Excelente trabalho prestado por João Ferrari e Vera Barcellos. A viagem foi perfeita, fomos muito bem assistidos desde o primeiro contato. Atendimento impecável.</p>
             </div>
             <div class="testimonial-author">
               <strong>Marcia Abreu</strong>
