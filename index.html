@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brasil Egito Turismo">
   <meta property="og:title" content="Egito Completo — Março 2027 | Brasil Egito Turismo">
-  <meta property="og:description" content="12 dias no Egito com João e Vera. Saída garantida, passagens incluídas e guia em português.">
+  <meta property="og:description" content="14 dias no Egito com João e Vera. Saída garantida, passagens incluídas e guia em português.">
   <meta property="og:url" content="https://brasilegitoturismo.com/">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:image" content="https://brasilegitoturismo.com/preview-egito-marco-2027.png">
@@ -398,8 +398,9 @@
     .journey-list li { display: grid; grid-template-columns: 50px 1fr; gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid rgba(238,220,186,.15); }
     .journey-list li:last-child { border-bottom: 1px solid rgba(238,220,186,.15); }
     .journey-list strong { color: var(--gold-light); font-family: var(--display); font-size: 1rem; }
-    .journey-list h3 { margin: 0 0 .4rem; font-size: 1.1rem; font-weight: 400; letter-spacing: .02em; }
+    .journey-list h3 { margin: 0 0 .4rem; color: var(--paper); font-size: 1.1rem; font-weight: 400; letter-spacing: .02em; }
     .journey-list p { margin: 0; color: rgba(238,220,186,.6); font-size: .9rem; font-weight: 300; }
+    .day-label { display: block; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(223,194,125,.8); margin-bottom: .2rem; }
 
     /* Anfitriões */
     .hosts { border-top: 1px solid var(--line); }
@@ -414,6 +415,207 @@
     .trust-banner h3 { color: var(--ink); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; }
     .trust-banner p { color: var(--muted); font-size: 1rem; font-weight: 300; max-width: 700px; margin: 0 auto; }
 
+    /* Galeria Premium */
+    .gallery-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+    }
+
+    .gallery-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(184,138,68,.08), transparent 28%),
+        radial-gradient(circle at 88% 78%, rgba(140,101,32,.07), transparent 32%);
+    }
+
+    .gallery-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-intro {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+
+    .gallery-intro .section-heading {
+      margin-bottom: 0;
+    }
+
+    .gallery-note {
+      max-width: 520px;
+      justify-self: end;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .gallery-mosaic {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 86px;
+      gap: 14px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(140,101,32,.30);
+      border-radius: 6px;
+      background: rgba(255,253,245,.28);
+      box-shadow: 0 12px 30px rgba(43,29,15,.08);
+      isolation: isolate;
+      cursor: zoom-in;
+    }
+
+    .gallery-card:nth-child(1) { grid-column: 1 / span 7; grid-row: span 5; }
+    .gallery-card:nth-child(2) { grid-column: 8 / span 5; grid-row: span 3; }
+    .gallery-card:nth-child(3) { grid-column: 8 / span 5; grid-row: span 4; }
+    .gallery-card:nth-child(4) { grid-column: 1 / span 5; grid-row: span 4; }
+    .gallery-card:nth-child(5) { grid-column: 6 / span 7; grid-row: span 4; }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .85s var(--ease), filter .6s var(--ease);
+      filter: saturate(.96) contrast(.98) sepia(.04);
+    }
+
+    .gallery-card:nth-child(1) img { object-position: center 48%; }
+    .gallery-card:nth-child(2) img { object-position: center 48%; }
+    .gallery-card:nth-child(3) img { object-position: center 36%; }
+    .gallery-card:nth-child(4) img { object-position: center 52%; }
+    .gallery-card:nth-child(5) img { object-position: center 56%; }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 42%, rgba(30,20,10,.14) 66%, rgba(30,20,10,.82) 100%);
+      transition: opacity .35s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.045);
+      filter: saturate(1.03) contrast(1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      z-index: 2;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.15rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      color: #fff8e8;
+    }
+
+    .gallery-caption-text {
+      display: grid;
+      gap: .2rem;
+    }
+
+    .gallery-caption small {
+      color: var(--gold-light);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .gallery-caption strong {
+      font-family: var(--display);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .gallery-zoom {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      background: rgba(43,29,15,.22);
+      backdrop-filter: blur(4px);
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .gallery-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .gallery-footer strong {
+      color: var(--gold-dark);
+      font-family: var(--display);
+      font-weight: 600;
+    }
+
+    /* Lightbox */
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+      place-items: center;
+      padding: 2rem;
+      background: rgba(18,13,8,.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-lightbox.open { display: grid; }
+
+    .gallery-lightbox img {
+      max-width: min(94vw, 1400px);
+      max-height: 86vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 25px 80px rgba(0,0,0,.42);
+      border: 1px solid rgba(229,205,150,.35);
+    }
+
+    .gallery-lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(229,205,150,.45);
+      color: var(--gold-light);
+      background: rgba(43,29,15,.6);
+      font-size: 1.5rem;
+      line-height: 1;
+      z-index: 3001;
+      cursor: pointer;
+    }
+
     /* Depoimentos */
     .testimonials { border-top: 1px solid var(--line); }
     .testimonials-header-elegant { text-align: center; margin-bottom: 4rem; }
@@ -427,7 +629,7 @@
     .testimonial-bubble p::before { content: '“'; color: var(--gold-dark); font-size: 1.5em; line-height: 0; margin-right: 2px; vertical-align: -0.2em; opacity: 0.6; }
     .testimonial-bubble p::after { content: '”'; color: var(--gold-dark); font-size: 1.5em; line-height: 0; margin-left: 2px; vertical-align: -0.2em; opacity: 0.6; }
     .testimonial-author { border-top: 1px solid var(--line); padding-top: 1rem; }
-    .testimonial-author strong { display: block; font-family: var(--sans); font-size: .95rem; color: var(--ink); font-weight: 600; }
+    .testimonial-author strong { display: block; font-family: 'Manrope', sans-serif; font-size: .95rem; color: var(--ink); font-weight: 600; }
     .testimonial-author span { display: block; font-size: .8rem; color: var(--muted); font-weight: 300; margin-top: .2rem; }
     .testimonials-cta { text-align: center; margin-top: 5rem; }
     .btn-facebook-reviews-link { display: inline-block; font-family: var(--display); font-size: .9rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold-dark); padding-bottom: 4px; transition: color .3s, border-color .3s; letter-spacing: .05em; font-weight: 600; }
@@ -460,7 +662,19 @@
     .hotel-gallery .hotel-img:not(:first-child) { aspect-ratio: 4 / 3; }
     .hotel-info h3 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 1rem; font-weight: 400; line-height: 1.2; }
     .hotel-subtitle { display: block; font-family: var(--display); color: var(--gold-dark); font-size: .9rem; margin-bottom: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
+    .hotel-stay { font-size: .95rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; }
     .hotel-info p { color: var(--text); font-weight: 300; font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .hotel-highlight {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted) !important;
+      font-size: .92rem !important;
+    }
+    .hotel-highlight strong {
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
     
     /* Tudo Incluso */
     .full-inclusions { border-top: 1px solid var(--line); }
@@ -541,6 +755,11 @@
 
     @media (max-width: 1100px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } nav { gap: 1.1rem; } }
     @media (max-width: 980px) {
+      .gallery-intro { grid-template-columns: 1fr; gap: 1.25rem; }
+      .gallery-note { justify-self: start; }
+      .gallery-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+      .gallery-card:nth-child(n) { grid-column: auto; grid-row: auto; }
+      .gallery-card:first-child { grid-column: 1 / -1; min-height: 320px; }
       .journey-grid, .hosts-card, .faq-layout, .intro-grid, .intro-text { grid-template-columns: 1fr; gap: 2rem; }
       .journey-image { min-height: 360px; }
       .pricing-grid { grid-template-columns: 1fr; }
@@ -577,6 +796,14 @@
       .fact { padding: 1.6rem .8rem; border-bottom: 1px solid var(--line); }
       .fact:nth-child(2) { border-right: 0; }
       .cards-grid, .elegant-checklist { grid-template-columns: 1fr; }
+      
+      .gallery-mosaic { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 1.5rem; -ms-overflow-style: none; scrollbar-width: none; margin-right: -15px; padding-right: 15px; }
+      .gallery-mosaic::-webkit-scrollbar { display: none; }
+      .gallery-card, .gallery-card:first-child, .gallery-card:nth-child(n) { grid-column: auto; grid-row: auto; flex: 0 0 85%; min-height: 400px; scroll-snap-align: center; }
+      .gallery-caption { left: 1rem; right: 1rem; bottom: .9rem; }
+      .gallery-footer { align-items: flex-start; flex-direction: column; gap: .45rem; }
+      .gallery-lightbox { padding: 1rem; }
+
       .timeline::before { left: 15px; }
       .timeline-item { grid-template-columns: 1fr; gap: .8rem; padding-left: 42px; padding-bottom: 2.2rem; }
       .timeline-marker { text-align: left; }
@@ -588,6 +815,7 @@
       .whatsapp-balloon { right: 0; bottom: calc(100% + 12px); }
       .whatsapp-balloon::after { top: auto; bottom: -5px; right: 18px; border-top: none; border-bottom: 1px solid var(--line); transform: rotate(45deg); }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -616,15 +844,14 @@
         <a class="nav-link" href="#incluso">O que inclui</a>
         <a class="nav-link" href="#anfitrioes">Anfitriões</a>
         <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
         <a class="nav-link" href="#roteiro">Roteiro</a>
         <a class="nav-link" href="#hoteis">Hotéis</a>
         <a class="nav-link" href="#investimento">Investimento</a>
         <a class="nav-link" href="#duvidas">Dúvidas</a>
         <a class="btn btn-gold btn-whatsapp-track nav-mobile-cta" data-location="mobile_menu" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero viajar com vocês</a>
       </nav>
-      
       <a class="btn-header btn-whatsapp-track" data-location="header" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero viajar com vocês</a>
-      
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
@@ -640,7 +867,7 @@
       <div class="hero-content">
         <div class="hero-kicker">Março 2027 · Grupo desde o Brasil</div>
         <h1>Egito Completo</h1>
-        <div class="hero-details">12 dias · 11 noites com João e Vera</div>
+        <div class="hero-details">14 dias · 11 noites no Egito com João e Vera</div>
         <p class="hero-subtitle">Embarque no dia 16. No Egito de 17 a 28. De volta ao Brasil no dia 29. Guia em português, cruzeiro no Nilo e Mar Vermelho All Inclusive.</p>
         <div class="hero-meta">
           <span>Emirates</span>
@@ -666,43 +893,20 @@
       </div>
     </section>
 
+    <section class="offer-strip">
+      <p class="lead">Saída confirmada · pagamento facilitado pensado em você</p>
+      <p class="sub">Voos Emirates · Grande Museu Egípcio · João e Vera ao lado de vocês do embarque ao retorno.</p>
+    </section>
+
     <!-- POR QUE VIAJAR CONOSCO? -->
-    <section class="section paper" id="diferenciais">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Por que viajar conosco?</span>
-          <h2 style="max-width:48rem;margin-top:.75rem">A viagem dos sonhos com o conforto e a segurança que você merece.</h2>
-          <p class="light" style="margin-top:1rem; max-width: 48rem;">Entregamos segurança, proximidade e a certeza de que cada detalhe foi validado. Veja o que nos torna a escolha certa para a sua experiência:</p>
-        </div>
-        
-        <div class="why-us-list reveal delay-1">
-          <div class="why-us-item">
-            <svg class="why-us-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            <div class="why-us-text">
-              <h3>Grupo acompanhado por João e Vera</h3>
-              <p>Atendimento próximo antes da viagem e presença constante do embarque no Brasil até o regresso.</p>
-            </div>
-          </div>
-          <div class="why-us-item">
-            <svg class="why-us-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <div class="why-us-text">
-              <h3>Passagens incluídas e saída garantida</h3>
-              <p>A oferta é real. As passagens internacionais estão incluídas e a saída não depende de grupos extras.</p>
-            </div>
-          </div>
-          <div class="why-us-item">
-            <svg class="why-us-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-            <div class="why-us-text">
-              <h3>Guia egiptólogo em português</h3>
-              <p>Fatos históricos e culturais explicados no seu idioma por um guia oficial durante toda a jornada.</p>
-            </div>
-          </div>
-          <div class="why-us-item">
-            <svg class="why-us-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            <div class="why-us-text">
-              <h3>Experiência de ponta a ponta</h3>
-              <p>Roteiro premium estruturado: Cruzeiro pelo Nilo e Resort All Inclusive no Mar Vermelho.</p>
-            </div>
+    <section class="section intro paper" id="experiencia">
+      <div class="container intro-grid">
+        <div class="intro-label reveal"><span class="eyebrow">A experiência</span></div>
+        <div class="intro-copy reveal">
+          <h2>Uma jornada completa com João e Vera. Cairo, Nilo, Luxor e Mar Vermelho.</h2>
+          <div class="intro-text">
+            <p>Vocês não compram apenas um pacote. Viajam em um grupo acompanhado desde o Brasil, com guia egiptólogo em português e assistência VIP no desembarque no Cairo.</p>
+            <p>O roteiro reúne o melhor do Egito, com operação local do nosso receptivo e o cuidado de quem estará junto com o grupo: João e Vera, do embarque ao retorno.</p>
           </div>
         </div>
       </div>
@@ -714,59 +918,19 @@
         <div class="section-heading reveal">
           <span class="eyebrow">Conforto em cada detalhe</span>
           <h2>Uma jornada desenhada ao seu redor</h2>
-          <p>Logística, acompanhamento e experiências perfeitamente coordenadas para que a sua única ocupação seja viver o momento.</p>
         </div>
 
         <div class="cards-grid">
-          <article class="feature-card reveal">
-            <span class="feature-number">01</span>
-            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3 3-3-1-2 2 5 2 2 5 2-2-1-3 3-3 4 6 1.2-.7c.4-.2.7-.6.6-1.1z"/></svg>
-            <h3>Voo internacional</h3>
-            <p>Passagens aéreas internacionais de ida e volta, saindo do Brasil com destino ao Egito, programadas para o grupo.</p>
-          </article>
-          <article class="feature-card reveal delay-1">
-            <span class="feature-number">02</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 28l16-5V9c0-2 1-4 3-4s3 2 3 4v14l16 5v5l-16-2v8l6 3v2l-9-1-9 1v-2l6-3v-8L5 33v-5z"/></svg>
-            <h3>Voo doméstico</h3>
-            <p>Trecho aéreo Cairo–Aswan incluído, permitindo aproveitar melhor o tempo e seguir confortavelmente para o Cruzeiro.</p>
-          </article>
-          <article class="feature-card reveal delay-2">
-            <span class="feature-number">03</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 4l17 10v20L24 44 7 34V14L24 4zM7 14l17 10 17-10M24 24v20"/></svg>
-            <h3>Assistência VIP</h3>
-            <p>Recepção elegante no desembarque internacional do Cairo e apoio absoluto durante os procedimentos de chegada.</p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-number">04</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M9 38V18l15-9 15 9v20M5 38h38M17 38V25h14v13M13 18h22"/></svg>
-            <h3>Egiptólogo em português</h3>
-            <p>Guias especialistas para transformar templos, tumbas e monumentos em narrativas que conectam você à história.</p>
-          </article>
-          <article class="feature-card reveal delay-1">
-            <span class="feature-number">05</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 33c6-5 12 5 18 0s12 5 18 0M9 28h30l-4-11H13L9 28zM17 17V9h14v8"/></svg>
-            <h3>Cruzeiro no Nilo</h3>
-            <p>Três noites de navegação serena, com pensão completa, desvendando os grandes templos do Alto Egito.</p>
-          </article>
-          <article class="feature-card reveal delay-2">
-            <span class="feature-number">06</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="36" cy="12" r="5"/><path d="M5 36c7-7 13 7 20 0s12 5 18 0M8 29c7-7 12 5 18 0s10 3 15 0"/></svg>
-            <h3>Mar Vermelho All-Inclusive</h3>
-            <p>Três noites de descanso merecido em Hurghada, em resort com praia privativa, alimentação e bebidas inclusas.</p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-number">07</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 40h32M12 40V22h24v18M17 22V13l7-6 7 6v9M19 29h10M19 34h10"/></svg>
-            <h3>Grandes monumentos</h3>
-            <p>Ingressos providenciados para as Pirâmides, Esfinge, Grande Museu Egípcio, Karnak, Vale dos Reis e demais sítios.</p>
-          </article>
-          <article class="feature-card reveal delay-1">
-            <span class="feature-number">08</span>
-            <svg class="feature-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 8c-9 0-16 7-17 16h34C40 15 33 8 24 8zM4 26h40M24 8V4M20 4h8M9 30v4c0 3 2 6 6 6h18c4 0 6-3 6-6v-4"/></svg>
-            <h3>Experiência Gastronômica</h3>
-            <p>Além da pensão completa no Cruzeiro e resort, 10 refeições cuidadosas (almoços e jantares) estão incluídas durante os passeios.</p>
-          </article>
+          <article class="feature-card reveal"><span class="feature-number">01</span><h3>Voo internacional</h3><p>Passagens aéreas internacionais de ida e volta, saindo do Brasil com destino ao Egito, programadas para o grupo.</p></article>
+          <article class="feature-card reveal delay-1"><span class="feature-number">02</span><h3>Voo doméstico</h3><p>Trecho aéreo Cairo–Aswan incluído, permitindo aproveitar melhor o tempo e seguir confortavelmente para o Cruzeiro.</p></article>
+          <article class="feature-card reveal delay-2"><span class="feature-number">03</span><h3>Assistência VIP</h3><p>Recepção elegante no desembarque internacional do Cairo e apoio absoluto durante os procedimentos de chegada.</p></article>
+          <article class="feature-card reveal"><span class="feature-number">04</span><h3>Egiptólogo em português</h3><p>Guias especialistas para transformar templos, tumbas e monumentos em narrativas que conectam você à história.</p></article>
+          <article class="feature-card reveal delay-1"><span class="feature-number">05</span><h3>Cruzeiro no Nilo</h3><p>Três noites de navegação serena, com pensão completa, desvendando os grandes templos do Alto Egito.</p></article>
+          <article class="feature-card reveal delay-2"><span class="feature-number">06</span><h3>Mar Vermelho All-Inclusive</h3><p>Três noites de descanso merecido em Hurghada, em resort com praia privativa, alimentação e bebidas inclusas.</p></article>
+          <article class="feature-card reveal"><span class="feature-number">07</span><h3>Grandes monumentos</h3><p>Ingressos providenciados para as Pirâmides, Esfinge, Grande Museu Egípcio, Karnak, Vale dos Reis e demais sítios.</p></article>
+          <article class="feature-card reveal delay-1"><span class="feature-number">08</span><h3>Experiência Gastronômica</h3><p>Além da pensão completa no Cruzeiro e resort, 10 refeições cuidadosas (almoços e jantares) estão incluídas durante os passeios.</p></article>
         </div>
+        <div class="inclusions-cta reveal center"><a class="btn btn-gold btn-whatsapp-track" data-location="inclusions" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero garantir minha vaga</a></div>
       </div>
     </section>
 
@@ -777,12 +941,11 @@
         <div class="journey-content reveal delay-1">
           <span class="eyebrow light">Quatro experiências em uma</span>
           <h2 id="journey-title">Cada cenário revela um novo Egito</h2>
-          <p class="journey-lead">Uma narrativa que evolui sutilmente — da energia vibrante do Cairo à quietude do deserto, culminando no azul do Mar Vermelho.</p>
           <ol class="journey-list">
-            <li><strong>01</strong><div><h3>Cairo Monumental</h3><p>Pirâmides, Esfinge, museus, Cairo histórico e a aura dos bazares.</p></div></li>
-            <li><strong>02</strong><div><h3>O Nilo Lendário</h3><p>Aswan, Philae, Kom Ombo e Edfu contemplados a partir das águas.</p></div></li>
-            <li><strong>03</strong><div><h3>Luxor a Céu Aberto</h3><p>Vale dos Reis, Hatshepsut, Karnak e os guardiões de Mêmnon.</p></div></li>
-            <li><strong>04</strong><div><h3>Refúgio no Mar Vermelho</h3><p>Dias de puro descanso e águas cristalinas na bela Hurghada.</p></div></li>
+            <li><strong>01</strong><div><span class="day-label">17–18 mar</span><h3>Cairo monumental</h3><p>Chegada VIP, Pirâmides, Esfinge e Grande Museu Egípcio.</p></div></li>
+            <li><strong>02</strong><div><span class="day-label">19–21 mar</span><h3>O Nilo</h3><p>Aswan, Philae, Kom Ombo, Edfu, Karnak e Luxor a bordo.</p></div></li>
+            <li><strong>03</strong><div><span class="day-label">22–24 mar</span><h3>Luxor e o mar</h3><p>Vale dos Reis e três noites All Inclusive em Hurghada.</p></div></li>
+            <li><strong>04</strong><div><span class="day-label">25–28 mar</span><h3>Despedida no Cairo</h3><p>Khan El Khalili, Cairo Antigo, Cidadela e embarque no dia 28.</p></div></li>
           </ol>
         </div>
       </div>
@@ -793,7 +956,7 @@
       <div class="container">
         <div class="hosts-card reveal">
           <div class="hosts-art">
-            <img loading="lazy" src="images/anfitriao.jpeg" alt="João e Vera acompanhando o grupo no Egito" style="object-fit: cover; object-position: center 20%;">
+            <img loading="lazy" src="images/anfitriao.jpeg" alt="João e Vera acompanhando o grupo no Egito">
             <div class="hosts-caption">João &amp; Vera · Anfitriões desde o Brasil</div>
           </div>
           <div class="hosts-copy">
@@ -801,6 +964,7 @@
             <h2>Você não estará sozinho do embarque ao retorno.</h2>
             <p>Sabemos que uma viagem para o Egito é a realização de um sonho e exige confiança absoluta. Por isso, João e Vera acompanham o grupo pessoalmente desde o Brasil.</p>
             <p>Não repassamos nossos clientes para terceiros desconhecidos. A nossa presença garante que cada etapa do roteiro seja cumprida com segurança, conforto e o suporte humano que você merece.</p>
+            <p class="signature-quote">O nosso desejo é apresentar o Egito da mesma forma como gostaríamos que alguém especial o revelasse para nós.</p>
             
             <div style="margin-top: 2rem;">
               <a href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Vera!%20Gostaria%20de%20saber%20mais%20sobre%20o%20grupo%20do%20Egito." target="_blank" class="btn btn-wa btn-whatsapp-track">Falar com a Vera agora</a>
@@ -865,6 +1029,46 @@
               <span>Recomendação oficial</span>
             </div>
           </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-bubble">
+              <p>Viagem mais que perfeita, tudo muito organizado, podemos dizer que foi pra mim e meu marido uma das melhores viagens que fizemos.</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Fatima Sudario</strong>
+              <span>Recomendação no Facebook</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal delay-1">
+            <div class="testimonial-bubble">
+              <p>Faz da sua viagem ao Egito um sonho concretizado!!! João e Vera são excelentes!!! Super recomendo!!!!</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Tânia Pivatto</strong>
+              <span>Recomendação no Facebook</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-bubble">
+              <p>Nota 1000. Amei a viagem. IMPERDÍVEL desde que embarcamos até nos últimos minutos, tivemos 100% de assistência. Guias locais maravilhosos. Em nenhum minuto me senti sem apoio. Agradeço a Deus.</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Tania Ferraz</strong>
+              <span>Recomendação no Facebook</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal delay-1">
+            <div class="testimonial-bubble">
+              <p>Equipe extremamente envolvida com o grupo, hotéis ótimos, um tour muito bom por todo Egito, a recepção da turma do Egito é perfeita, guia com bom português.</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Iolanda Val</strong>
+              <span>Recomendação no Facebook</span>
+            </div>
+          </article>
         </div>
 
         <div class="testimonials-cta reveal delay-2">
@@ -874,6 +1078,90 @@
         </div>
       </div>
     </section>
+
+    <!-- GALERIA PREMIUM -->
+    <section class="section gallery-section sand-soft" id="galeria">
+      <div class="container gallery-shell">
+        <div class="gallery-intro reveal">
+          <div class="section-heading">
+            <span class="eyebrow">Memórias reais</span>
+            <h2>O Egito vivido por quem já viajou conosco</h2>
+          </div>
+          <p class="gallery-note">
+            Mais do que monumentos, uma viagem é feita de encontros, risadas e histórias compartilhadas.
+            Estes são alguns registros reais de grupos da Brasil Egito Turismo.
+          </p>
+        </div>
+
+        <div class="gallery-mosaic">
+          <figure class="gallery-card reveal" tabindex="0" data-gallery-src="images/HXlCi.jpg">
+            <img src="images/HXlCi.jpg" alt="Grupo da Brasil Egito Turismo reunido diante de um templo no Egito" loading="lazy">
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-text">
+                <small>Grupo Brasil Egito</small>
+                <strong>História vivida em conjunto</strong>
+              </span>
+              <span class="gallery-zoom" aria-hidden="true">＋</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal delay-1" tabindex="0" data-gallery-src="images/HU6dF.jpg">
+            <img src="images/HU6dF.jpg" alt="Viajantes reunidos em momento de convivência durante a viagem" loading="lazy">
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-text">
+                <small>Entre amigos</small>
+                <strong>Conexões que a viagem cria</strong>
+              </span>
+              <span class="gallery-zoom" aria-hidden="true">＋</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal" tabindex="0" data-gallery-src="images/iqcB3.jpg">
+            <img src="images/iqcB3.jpg" alt="Viajantes registrando um momento descontraído no Egito" loading="lazy">
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-text">
+                <small>Momentos espontâneos</small>
+                <strong>Sorrisos que ficam na memória</strong>
+              </span>
+              <span class="gallery-zoom" aria-hidden="true">＋</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal delay-1" tabindex="0" data-gallery-src="images/KI7LT.jpg">
+            <img src="images/KI7LT.jpg" alt="Viajantes em passeio com camelos no Egito" loading="lazy">
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-text">
+                <small>Experiências</small>
+                <strong>O Egito além dos cartões-postais</strong>
+              </span>
+              <span class="gallery-zoom" aria-hidden="true">＋</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-card reveal" tabindex="0" data-gallery-src="images/P3tV4.jpg">
+            <img src="images/P3tV4.jpg" alt="Grupo da Brasil Egito Turismo reunido durante passeio no Egito" loading="lazy">
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-text">
+                <small>Jornada compartilhada</small>
+                <strong>Do primeiro dia às lembranças para sempre</strong>
+              </span>
+              <span class="gallery-zoom" aria-hidden="true">＋</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="gallery-footer reveal">
+          <span>Fotos de viagens e grupos reais.</span>
+          <strong>Brasil Egito Turismo</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <button class="gallery-lightbox-close" type="button" aria-label="Fechar foto">×</button>
+      <img src="" alt="">
+    </div>
 
     <!-- ROTEIRO EDITORIAL -->
     <section class="section itinerary paper" id="roteiro">
@@ -886,101 +1174,114 @@
 
         <div class="timeline">
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>16</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>16</strong><span>Terça-feira</span></div>
             <div class="timeline-panel">
               <div class="timeline-top"><h3>Embarque no Brasil</h3></div>
-              <p>Apresentação no aeroporto e embarque com destino ao Egito. Início da nossa jornada, com acompanhamento desde o Brasil.</p>
+              <p>Apresentação no aeroporto e embarque do grupo com destino ao Egito. Início da nossa jornada, com acompanhamento desde o Brasil.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>17</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>17</strong><span>Quarta-feira</span></div>
             <div class="timeline-panel">
               <div class="timeline-top"><h3>Chegada ao Cairo</h3></div>
-              <p>Chegada ao Aeroporto Internacional do Cairo. Recepção e assistência VIP durante o processo de imigração. Traslado para o hotel em veículo de luxo com ar-condicionado e hospedagem no Cairo.</p>
+              <p>Chegada ao Aeroporto Internacional do Cairo. Recepção pela equipe local da Brasil Egito Turismo, que fornecerá assistência completa durante o processo de imigração com tratamento VIP. Em seguida, traslado para o hotel em veículo de luxo com ar-condicionado e acomodação no Cairo.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>18</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>18</strong><span>Quinta-feira</span></div>
             <div class="timeline-panel">
               <div class="timeline-top"><h3>Pirâmides, Esfinge e Grande Museu Egípcio</h3></div>
-              <p>Café da manhã no hotel. Passeio de dia inteiro visitando as Grandes Pirâmides de Gizé e a Esfinge. Parada nas lojas de papiro, perfumes e algodão. Almoço em restaurante local e visita ao Grande Museu Egípcio. Jantar em restaurante local e hospedagem no Cairo.</p>
+              <p>Após o café da manhã no hotel, saída para um dia dedicado a alguns dos maiores símbolos do mundo: as Grandes Pirâmides de Gizé e a Esfinge. Na sequência, visitaremos lojas tradicionais de papiro, perfumes e algodão. O almoço será servido em restaurante local. Em seguida, visita guiada ao Grande Museu Egípcio. O dia termina com um jantar em restaurante local e retorno para a acomodação no Cairo.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>19</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>19</strong><span>Sexta-feira</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Voo para Aswan e Embarque</h3></div>
-              <p>Café da manhã e check-out. Voo para Aswan. Na chegada, visitas à Represa Alta, Obelisco Inacabado e Templo de Philae. Embarque e almoço no cruzeiro. À tarde, passeio de felucca ao redor da Ilha Elefantina. Visita opcional à Vila Núbia. Jantar e pernoite a bordo em Aswan.</p>
+              <div class="timeline-top"><h3>Aswan e Início do Cruzeiro no Nilo</h3></div>
+              <p>Café da manhã no estilo buffet, check-out e traslado ao aeroporto do Cairo para o voo com destino a Aswan. Após a chegada, seguiremos para as visitas à monumental Represa Alta, ao Obelisco Inacabado e ao belíssimo Templo de Philae. Embarque no cruzeiro, onde o almoço será servido. À tarde, realizaremos um clássico passeio de felucca (barco à vela típico) contornando a Ilha Elefantina. Haverá a possibilidade de visita opcional à colorida Vila Núbia. Jantar e pernoite a bordo do cruzeiro em Aswan.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>20</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>20</strong><span>Sábado</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Kom Ombo e Navegação para Edfu</h3></div>
-              <p>Passeio opcional ao Templo de Abu Simbel. Café da manhã no cruzeiro. Navegação e visita ao Templo de Kom Ombo, dedicado aos deuses Sobek e Haroeris. Almoço e navegação para Edfu. Jantar e pernoite a bordo.</p>
+              <div class="timeline-top"><h3>Abu Simbel (Opcional), Kom Ombo e Edfu</h3></div>
+              <p>Pela manhã, existe a possibilidade de realizar a impressionante visita opcional ao Templo de Abu Simbel. Serviremos o café da manhã a bordo enquanto o cruzeiro inicia sua navegação até o Templo de Kom Ombo. Após o almoço no navio, visitaremos este singular templo duplo dedicado aos deuses Sobek e Haroeris. A navegação continua rumo a Edfu. Jantar e pernoite a bordo.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>21</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>21</strong><span>Domingo</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Edfu, Eclusa de Esna e Luxor</h3></div>
-              <p>Visita logo cedo ao Templo de Edfu (Hórus). Café da manhã a bordo e navegação para Esna. Almoço a bordo, travessia da eclusa e navegação até Luxor. Transfer para visita aos templos de Luxor e Karnak. Jantar e pernoite a bordo em Luxor.</p>
+              <div class="timeline-top"><h3>Edfu, Eclusa de Esna, Luxor e Karnak</h3></div>
+              <p>Visita logo cedo ao Templo de Edfu, um dos mais bem preservados do país, dedicado ao deus Hórus. Retorno ao navio para o café da manhã e navegação com destino a Esna. O almoço será servido a bordo enquanto cruzamos a famosa eclusa em direção a Luxor. Na chegada, desembarcaremos para visitar dois dos complexos mais impressionantes do mundo antigo: os templos de Luxor e Karnak. Jantar e pernoite a bordo em Luxor.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>22</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>22</strong><span>Segunda-feira</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Vale dos Reis e Mar Vermelho</h3></div>
-              <p>Passeio opcional de balão. Café da manhã e desembarque. Visitas à Margem Oeste: Colossos de Memnon, Templo da Rainha Hatshepsut e o Vale dos Reis. Almoço em restaurante local. Traslado de carro para Hurghada. Chegada para descanso, com jantar e pernoite no hotel.</p>
+              <div class="timeline-top"><h3>Vale dos Reis e Mar Vermelho (Hurghada)</h3></div>
+              <p>Pela manhã, possibilidade de realizar o encantador passeio opcional de balão de ar quente ao amanhecer sobre os monumentos antigos. Após o café da manhã a bordo, faremos o desembarque do cruzeiro. As visitas continuam pela Margem Oeste do Nilo (West Bank), incluindo os imponentes Colossos de Memnon, o Templo da Rainha Hatshepsut (em Deir El-Bahari) e o lendário Vale dos Reis. O almoço será servido em restaurante local. Em seguida, faremos o traslado rodoviário para o Mar Vermelho. O dia termina com descanso, jantar e pernoite no hotel resort em Hurghada.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>23</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>23</strong><span>Terça-feira</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Mar Vermelho (Hurghada)</h3></div>
-              <p>Café da manhã no hotel. Dia livre para aproveitar a praia e as instalações. Passeio opcional de Safari no deserto. Jantar e pernoite no hotel em Hurghada.</p>
+              <div class="timeline-top"><h3>Descanso e All Inclusive em Hurghada</h3></div>
+              <p>Café da manhã no hotel. Um dia totalmente livre para usufruir da estrutura do resort, descansar e aproveitar a praia. Para quem desejar mais aventura, há a opção de contratar um safári pelo deserto. Jantar e pernoite no hotel em Hurghada.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>24</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>24</strong><span>Quarta-feira</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Mar Vermelho (Hurghada)</h3></div>
-              <p>Café da manhã no hotel. Dia livre com opções de passeios de snorkeling ou viagem marítima. Jantar e pernoite no hotel em Hurghada.</p>
+              <div class="timeline-top"><h3>O Mar Vermelho em Hurghada</h3></div>
+              <p>Café da manhã no hotel. Mais um dia livre à beira do Mar Vermelho, perfeito para relaxar. Para os exploradores, há opções de passeios aquáticos para a prática de snorkeling ou um cruzeiro marítimo de contemplação pelas águas cristalinas da região (cotados à parte, caso deseje). Jantar e pernoite no hotel em Hurghada.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>25</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>25</strong><span>Quinta-feira</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Retorno ao Cairo e Khan El Khalili</h3></div>
-              <p>Café da manhã no hotel e retorno de carro ao Cairo. Almoço no caminho. Havendo tempo disponível, visita ao tradicional mercado Khan El Khalili. Jantar em restaurante local e hospedagem no Cairo.</p>
+              <div class="timeline-top"><h3>Retorno ao Cairo e Mercado Khan El Khalili</h3></div>
+              <p>Após o café da manhã no hotel, daremos início à viagem de retorno ao Cairo de carro. Faremos uma pausa para o almoço no percurso. Se o tempo da viagem permitir, visitaremos o mundialmente famoso mercado histórico Khan El Khalili, um dos cartões-postais culturais do Cairo. Jantar em restaurante local e acomodação no hotel da capital.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>26</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>26</strong><span>Sexta-feira</span></div>
             <div class="timeline-panel">
               <div class="timeline-top"><h3>Memphis e Saqqara</h3></div>
-              <p>Café da manhã no hotel. Visita a Memphis e à necrópole de Saqqara. Almoço em restaurante local. Jantar em restaurante local (cruzeiro com jantar no Nilo opcional) e hospedagem no Cairo.</p>
+              <p>Café da manhã no estilo buffet no hotel. O dia será dedicado à visitação da antiga capital do Egito, Memphis, e do imenso complexo arqueológico da necrópole de Saqqara. O almoço será em restaurante local. O jantar está programado para um restaurante da cidade, mas há a possibilidade de substituí-lo por um agradável jantar de encerramento em um cruzeiro pelas águas do Nilo (opcional). Retorno ao hotel no Cairo e acomodação.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>27</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>27</strong><span>Sábado</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Cairo Antigo, Cidadela e São Simão</h3></div>
-              <p>Café da manhã. Visita à Igreja de São Simão. Almoço em restaurante local. Passeio pela Cidadela, Mesquita de Mohamed Ali e Cairo Antigo. Jantar em restaurante local e hospedagem no Cairo.</p>
+              <div class="timeline-top"><h3>Igreja de São Simão, Cidadela e Cairo Antigo</h3></div>
+              <p>Café da manhã no hotel. Partiremos para visitar a grandiosa Igreja da Caverna, conhecida como Igreja de São Simão. Após almoçar em um restaurante da região, a programação avança para a Cidadela de Saladino, onde contemplaremos a grandiosa Mesquita de Mohamed Ali. Concluiremos os passeios desbravando as vielas e histórias milenares do Cairo Antigo. Jantar em restaurante local, traslado para o hotel no Cairo e acomodação.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>28</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>28</strong><span>Domingo</span></div>
             <div class="timeline-panel">
-              <div class="timeline-top"><h3>Despedida do Egito</h3></div>
-              <p>Café da manhã no hotel. Em horário determinado, traslado ao aeroporto do Cairo para embarque no voo internacional.</p>
+              <div class="timeline-top"><h3>Despedida e Embarque Internacional</h3></div>
+              <p>Café da manhã no hotel no Cairo. Em horário coordenado por nossa equipe, traslado ao Aeroporto Internacional do Cairo para tomarmos nosso voo de volta.</p>
             </div>
           </article>
+
           <article class="timeline-item reveal">
-            <div class="timeline-marker"><strong>29</strong><span>Março</span></div>
+            <div class="timeline-marker"><strong>29</strong><span>Segunda-feira</span></div>
             <div class="timeline-panel">
               <div class="timeline-top"><h3>Chegada ao Brasil</h3></div>
-              <p>Desembarque no Brasil e fim dos nossos serviços, levando na bagagem memórias inesquecíveis da nossa jornada.</p>
+              <p>Pouso seguro no Brasil. Chegamos ao fim dos nossos serviços, mas com a certeza de que a beleza e os mistérios vividos ficarão guardados na memória para sempre. Fim da jornada!</p>
             </div>
           </article>
         </div>
@@ -1048,7 +1349,7 @@
         <div class="section-heading center reveal">
           <span class="eyebrow">Abrangência</span>
           <h2>A Estrutura da Experiência</h2>
-          <p>O detalhamento refinado do que compõe a sua viagem.</p>
+          <p>O detalhamento refinado do que compõe a sua viagem de 14 dias.</p>
         </div>
         
         <div class="checklist-grid reveal delay-1">
@@ -1294,5 +1595,52 @@
       });
     })();
   </script>
+
+  <script>
+    (() => {
+      const box = document.getElementById('galleryLightbox');
+      if (!box) return;
+
+      const boxImg = box.querySelector('img');
+      const closeBtn = box.querySelector('.gallery-lightbox-close');
+      const cards = document.querySelectorAll('.gallery-card[data-gallery-src]');
+
+      const openBox = (card) => {
+        const src = card.getAttribute('data-gallery-src');
+        const img = card.querySelector('img');
+        boxImg.src = src;
+        boxImg.alt = img ? img.alt : 'Foto da galeria';
+        box.classList.add('open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeBox = () => {
+        box.classList.remove('open');
+        box.setAttribute('aria-hidden', 'true');
+        boxImg.src = '';
+        document.body.style.overflow = '';
+      };
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => openBox(card));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openBox(card);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeBox);
+      box.addEventListener('click', (e) => {
+        if (e.target === box) closeBox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && box.classList.contains('open')) closeBox();
+      });
+    })();
+  </script>
+
 </body>
 </html>
