@@ -2,11 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Egito Completo — Março 2027 | Brasil Egito Turismo</title>
   <meta name="description" content="Viagem Egito 2027: grupo exclusivo em março saindo do Brasil com João e Vera. Guia em português, cruzeiro no Nilo, Hurghada All Inclusive e Grande Museu Egípcio.">
   <meta name="keywords" content="viagem Egito 2027, grupo Egito março 2027, pacote Egito 2027, viagem Egito com guia em português, Egito saindo do Brasil">
   <meta name="theme-color" content="#11100E">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://brasilegitoturismo.com/">
 
   <meta property="og:type" content="website">
@@ -22,7 +23,7 @@
   <meta property="og:image:alt" content="Egito Março 2027 — Brasil Egito Turismo com João e Vera">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Egito Completo — Março 2027 | Brasil Egito Turismo">
-  <meta name="twitter:description" content="12 dias com João e Vera. Emirates, Nilo e Mar Vermelho. Entrada USD 450.">
+  <meta name="twitter:description" content="11 noites com João e Vera. Emirates, Nilo e Mar Vermelho. Entrada USD 450. 17 vagas de 30.">
   <meta name="twitter:image" content="https://brasilegitoturismo.com/preview-egito-marco-2027.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-28NMB42323"></script>
@@ -53,7 +54,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
+:root {
       --ink: #11100e;
       --ink-soft: #1a1815;
       --sand: #f4efe5;
@@ -70,15 +71,17 @@
       --header-h: 82px;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       margin: 0;
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--sand-soft);
       color: var(--text);
       line-height: 1.75;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
     body.menu-open { overflow: hidden; }
     ::selection { background: var(--gold); color: var(--ink); }
@@ -86,7 +89,7 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; cursor: pointer; }
     h1, h2, h3, h4, p { margin-top: 0; }
-    h1, h2, h3, h4 { font-family: 'Cinzel', serif; font-weight: 500; line-height: 1.2; }
+    h1, h2, h3, h4 { font-family: 'Cinzel', 'Times New Roman', serif; font-weight: 500; line-height: 1.2; }
 
     .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 9999; background: var(--paper); color: var(--ink); padding: .8rem 1rem; }
     .skip-link:focus { top: 1rem; }
@@ -106,12 +109,13 @@
     .section-heading.center p { margin-inline: auto; }
 
     .announcement {
-      position: relative; z-index: 1001; padding: .55rem 1rem; background: var(--ink);
+      position: relative; z-index: 1001; padding: .55rem 1rem; padding-top: calc(.55rem + env(safe-area-inset-top));
+      background: var(--ink);
       color: var(--gold-light); text-align: center; font-size: .72rem; font-weight: 500;
-      letter-spacing: .13em; text-transform: uppercase;
+      letter-spacing: .13em; text-transform: uppercase; line-height: 1.45;
     }
     header {
-      position: fixed; top: 31px; left: 0; right: 0; z-index: 1000; height: var(--header-h);
+      position: fixed; top: var(--announce-h, 31px); left: 0; right: 0; z-index: 1000; height: var(--header-h);
       color: #fff; border-bottom: 1px solid rgba(255,255,255,.13);
       transition: background .4s, height .4s, box-shadow .4s, top .4s;
     }
@@ -139,7 +143,7 @@
       background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease);
     }
     .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
-    .menu-toggle { display: none; border: 0; padding: .5rem; background: none; color: #fff; }
+    .menu-toggle { display: none; border: 0; padding: .7rem; min-width: 44px; min-height: 44px; background: none; color: #fff; }
     .menu-toggle span { display: block; width: 25px; height: 1px; margin: 6px 0; background: currentColor; transition: transform .3s, opacity .3s; }
 
     .btn {
@@ -172,7 +176,7 @@
     }
     .hero-kicker { margin-bottom: .75rem; color: var(--gold-dark); font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; }
     .hero h1 { margin: 0 0 .7rem; color: var(--ink); font-size: clamp(2.2rem, 6.4vw, 3.9rem); letter-spacing: -.02em; line-height: 1.08; font-weight: 400; }
-    .hero-details { font-family: 'Cinzel', serif; font-size: clamp(.95rem, 1.8vw, 1.05rem); color: var(--gold-dark); margin-bottom: .85rem; letter-spacing: .1em; }
+    .hero-details { font-family: 'Cinzel', serif; font-size: clamp(.72rem, 2.8vw, 1.05rem); color: var(--gold-dark); margin-bottom: .85rem; letter-spacing: .06em; white-space: nowrap; }
     .hero-subtitle { font-size: clamp(.92rem, 1.6vw, 1rem); font-weight: 300; color: var(--muted); margin-bottom: 1.2rem; max-width: 36rem; line-height: 1.7; }
     .hero-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .7rem 1rem; margin-bottom: 1.6rem; font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
     .hero-meta span.sep { width: 1.6rem; height: 1px; background: var(--gold); }
@@ -294,9 +298,12 @@
     }
     .pricing-amount-sub { display: block; font-size: .95rem; margin-bottom: .8rem; }
     .pricing-desc { color: var(--muted); font-size: .9rem; font-weight: 300; margin: 0; }
-    .total-bar { background: var(--paper); color: var(--ink); text-align: center; padding: 1.6rem 1.2rem; border: 1px solid rgba(198,161,91,.5); }
-    .total-bar span { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); }
-    .total-bar strong { display: block; margin-top: .4rem; font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 400; }
+    .pricing-card.featured { border-color: rgba(198,161,91,.72); box-shadow: 0 10px 28px rgba(150,113,47,.08); }
+    .pricing-card.featured .pricing-amount-main { font-size: clamp(2.4rem, 4vw, 2.85rem); color: var(--gold-dark); }
+    .total-bar { background: transparent; color: var(--ink); text-align: center; padding: .35rem 1.2rem 0; border: 0; }
+    .total-bar span { display: block; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .total-bar strong { display: block; margin-top: .2rem; font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); }
+    .pricing-ease { max-width: 680px; margin: .85rem auto 0; color: var(--ink); font-size: .95rem; font-weight: 400; text-align: center; }
     .pricing-cta { text-align: center; margin-top: 2rem; }
     .pricing-disclaimer { max-width: 720px; margin: 1.2rem auto 0; color: var(--muted); font-size: .82rem; font-weight: 300; text-align: center; }
 
@@ -326,11 +333,13 @@
     .footer-bottom p { margin: 0; }
 
     .whatsapp-fixed {
-      position: fixed; right: 30px; bottom: 30px; z-index: 1100; display: flex; align-items: center; justify-content: center;
+      position: fixed; right: calc(18px + env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 1100; display: flex; align-items: center; justify-content: center;
       width: 56px; height: 56px; border-radius: 50%; background: var(--whatsapp); color: #fff;
       box-shadow: 0 10px 25px rgba(0,0,0,.15);
     }
-    .whatsapp-fixed:hover { transform: translateY(-3px); }
+    @media (hover: hover) {
+      .whatsapp-fixed:hover { transform: translateY(-3px); }
+    }
     .whatsapp-fixed svg { width: 30px; height: 30px; fill: currentColor; }
     .whatsapp-balloon {
       position: absolute; right: 70px; bottom: 12px; background: var(--paper); color: var(--ink);
@@ -364,20 +373,37 @@
       }
     }
     @media (max-width: 720px) {
-      :root { --header-h: 70px; }
+      :root { --header-h: 70px; --announce-h: 52px; }
+      html { scroll-padding-top: 86px; }
       .container { width: min(100% - 30px, 1180px); }
-      .announcement { font-size: .62rem; letter-spacing: .08em; }
+      .section { padding: 3.25rem 0; }
+      .closing-block { padding: 3.5rem 0; }
+      .announcement { font-size: clamp(.58rem, 2.65vw, .72rem); letter-spacing: .06em; white-space: nowrap; line-height: 1.2; }
       .menu-toggle { display: block; }
+      header:not(.scrolled) {
+        background: linear-gradient(180deg, rgba(17,16,14,.78), rgba(17,16,14,.28));
+        border-bottom-color: transparent;
+      }
       nav {
-        position: fixed; inset: 0; z-index: -1; display: flex; flex-direction: column; justify-content: center;
-        gap: 1.6rem; background: rgba(17,16,14,.98); opacity: 0; visibility: hidden; padding: 5rem 2rem;
+        position: fixed; inset: 0; z-index: -1; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+        gap: .85rem; background: #11100e; opacity: 0; visibility: hidden; text-align: center;
+        padding: calc(var(--announce-h, 40px) + var(--header-h, 70px) + 1.35rem) 1.5rem calc(1.5rem + env(safe-area-inset-bottom));
+        overflow-y: auto; -webkit-overflow-scrolling: touch;
       }
       nav.open { opacity: 1; visibility: visible; }
-      nav .nav-link { font-family: 'Cinzel', serif; font-size: 1.15rem; }
+      nav .nav-link { font-family: 'Cinzel', 'Times New Roman', serif; font-size: 1.05rem; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+      #nav-wa { margin-top: .35rem; width: min(100%, 280px); }
+      html.menu-open, body.menu-open { overflow: hidden; height: 100%; }
+      body.menu-open { position: fixed; width: 100%; }
+      body.menu-open header { background: #11100e; box-shadow: none; }
+      body.menu-open .whatsapp-fixed { display: none; }
       .menu-toggle.open span:first-child { transform: translateY(7px) rotate(45deg); }
       .menu-toggle.open span:nth-child(2) { opacity: 0; }
       .menu-toggle.open span:last-child { transform: translateY(-7px) rotate(-45deg); }
       .hero-content { padding: 2.2rem 1.2rem 2.4rem; }
+      .hero-kicker { letter-spacing: .14em; }
+      .hero-details { letter-spacing: .04em; line-height: 1.3; white-space: nowrap; }
+      .hero-meta { letter-spacing: .1em; gap: .55rem .8rem; }
       .hero-meta span.sep { display: none; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-actions .btn { width: 100%; min-width: 0; }
@@ -385,16 +411,22 @@
       .fact { padding: 1.6rem .8rem; border-bottom: 1px solid var(--line); }
       .fact:nth-child(2) { border-right: 0; }
       .cards-grid, .elegant-checklist { grid-template-columns: 1fr; }
+      .pricing-amount-main.airfare { white-space: normal; }
+      .pricing-from { display: block; margin: 0 0 .2rem; }
+      .faq-list summary { min-height: 48px; }
+      .faq-list details p { margin-right: 0; }
       .timeline::before { left: 15px; }
       .timeline-item { grid-template-columns: 1fr; gap: .8rem; padding-left: 42px; padding-bottom: 2.2rem; }
       .timeline-marker { text-align: left; }
       .timeline-marker strong, .timeline-marker span { display: inline; margin-right: .4rem; }
       .timeline-marker::after { top: .45rem; left: -31px; right: auto; }
       .footer-grid, .footer-bottom { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+      .footer-col a, .footer-col p { padding: .35rem 0; overflow-wrap: anywhere; }
       .footer-col button { margin-inline: auto; }
-      .whatsapp-fixed { right: 18px; bottom: 18px; width: 52px; height: 52px; }
-      .whatsapp-balloon { right: 0; bottom: calc(100% + 12px); }
+      .whatsapp-fixed { right: calc(16px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); width: 56px; height: 56px; }
+      .whatsapp-balloon { right: 0; left: auto; bottom: calc(100% + 10px); width: max-content; max-width: none; white-space: nowrap; }
       .whatsapp-balloon::after { top: auto; bottom: -5px; right: 18px; border-top: none; border-bottom: 1px solid var(--line); transform: rotate(45deg); }
+      a, button, summary { touch-action: manipulation; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -402,10 +434,13 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"TravelAgency","@id":"https://brasilegitoturismo.com/#agencia","name":"Brasil Egito Turismo","url":"https://brasilegitoturismo.com/","email":"brasilegitoturismo@gmail.com","telephone":"+5517991054452","address":{"@type":"PostalAddress","streetAddress":"Rodovia Luiz Carlos Brandolezi, km 07","addressLocality":"Potirendaba","addressRegion":"SP","addressCountry":"BR"}},{"@type":"TouristTrip","name":"Egito Completo — Março 2027","description":"Grupo saindo do Brasil em 16 de março de 2027, no Egito de 17 a 28 e retorno no dia 29. 11 noites com João e Vera, guia em português, cruzeiro no Nilo e Hurghada All Inclusive.","provider":{"@id":"https://brasilegitoturismo.com/#agencia"},"offers":{"@type":"Offer","price":"20091.38","priceCurrency":"BRL","availability":"https://schema.org/LimitedAvailability","url":"https://brasilegitoturismo.com/#investimento","description":"Entrada para reservar a vaga. Grupo de 30 viajantes, restam 17."}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona o visto para o Egito?","acceptedAnswer":{"@type":"Answer","text":"O visto é na chegada, no aeroporto do Cairo (cerca de USD 25). A equipe local presta assistência VIP durante o processo de chegada."}},{"@type":"Question","name":"A passagem aérea internacional está inclusa?","acceptedAnswer":{"@type":"Answer","text":"Sim. As passagens aéreas internacionais estão incluídas, com voos Emirates. Embarque no Brasil em 16 de março e retorno no dia 29."}},{"@type":"Question","name":"O Grande Museu Egípcio está confirmado?","acceptedAnswer":{"@type":"Answer","text":"Sim. A visita do dia 18 é ao Grande Museu Egípcio, juntamente com as Pirâmides e a Esfinge."}},{"@type":"Question","name":"Posso viajar sozinho?","acceptedAnswer":{"@type":"Answer","text":"Sim. Há opção de quarto individual com acréscimo ou acomodação dupla compartilhada com outro integrante do grupo."}},{"@type":"Question","name":"Quais documentos preciso?","acceptedAnswer":{"@type":"Answer","text":"Passaporte com validade mínima de seis meses após a entrada no Egito e certificado internacional de vacinação contra a febre amarela."}},{"@type":"Question","name":"Como reservo?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp. A entrada de USD 450 garante a vaga no grupo de março de 2027."}}]}]}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-  <div class="announcement">Embarque 16 de março · Egito 17 a 28 · Chegada ao Brasil 29 · Grupo com João e Vera</div>
+  <div class="announcement">De 16 a 29 de março · 17 vagas de 30</div>
 
   <header id="header">
     <div class="container nav-wrap">
@@ -419,11 +454,10 @@
         <a class="nav-link" href="#anfitrioes">Anfitriões</a>
         <a class="nav-link" href="#roteiro">Roteiro</a>
         <a class="nav-link" href="#hoteis">Hotéis</a>
-        <a class="nav-link" href="#investimento">Investimento</a>
         <a class="nav-link" href="#duvidas">Dúvidas</a>
-        <a class="btn btn-gold btn-whatsapp-track" data-location="mobile_menu" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F" style="display:none" id="nav-wa">Quero viajar com vocês</a>
+        <a class="btn btn-gold btn-whatsapp-track" data-location="mobile_menu" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F" style="display:none" id="nav-wa">Falar com João e Vera</a>
       </nav>
-      <a class="btn-header btn-whatsapp-track" data-location="header" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero viajar com vocês</a>
+      <a class="btn-header btn-whatsapp-track" data-location="header" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Falar com João e Vera</a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
@@ -433,30 +467,30 @@
   <main id="conteudo">
     <section class="hero" id="inicio">
       <div class="hero-stage">
-        <img class="hero-photo" src="images/hero.jpeg" alt="João e Vera no Egito — jornada de março 2027">
+        <img class="hero-photo" src="images/hero.jpeg" alt="João e Vera no Egito — jornada de março 2027" width="1438" height="1080" fetchpriority="high" decoding="async">
       </div>
       <div class="hero-content">
         <div class="hero-kicker">Março 2027 · Grupo desde o Brasil</div>
         <h1>Egito Completo</h1>
-        <div class="hero-details">12 dias · 11 noites com João e Vera</div>
-        <p class="hero-subtitle">Embarque no dia 16. No Egito de 17 a 28. De volta ao Brasil no dia 29. Guia em português, cruzeiro no Nilo e Mar Vermelho All Inclusive.</p>
+        <div class="hero-details">11 noites · embarque 16, Brasil no dia 29</div>
+        <p class="hero-subtitle">Guia em português, cruzeiro no Nilo e Mar Vermelho All Inclusive.</p>
         <div class="hero-meta">
           <span>Emirates</span>
           <span class="sep" aria-hidden="true"></span>
           <span>Entrada USD 450</span>
           <span class="sep" aria-hidden="true"></span>
-          <span>Vagas do grupo</span>
+          <span>17 vagas de 30</span>
         </div>
         <div class="hero-actions">
-          <a class="btn btn-gold btn-whatsapp-track" data-location="hero" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero viajar com vocês</a>
-          <a class="btn btn-line" href="#investimento">Ver o investimento</a>
+          <a class="btn btn-gold btn-whatsapp-track" data-location="hero" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Falar com João e Vera</a>
+          <a class="btn btn-line" href="#roteiro">Conhecer o roteiro</a>
         </div>
       </div>
     </section>
 
     <section class="facts" aria-label="Destaques da viagem">
       <div class="container facts-grid">
-        <div class="fact"><strong>12</strong><span>Dias de jornada</span></div>
+        <div class="fact"><strong>12</strong><span>Dias no Egito</span></div>
         <div class="fact"><strong>03</strong><span>Noites no Nilo</span></div>
         <div class="fact"><strong>03</strong><span>Noites no Mar Vermelho</span></div>
         <div class="fact"><strong>100%</strong><span>Guia em português</span></div>
@@ -464,7 +498,7 @@
     </section>
 
     <section class="offer-strip">
-      <p class="lead">Saída confirmada · a reserva começa com USD 450</p>
+      <p class="lead">Saída confirmada · restam 17 vagas de 30 · reserva com USD 450</p>
       <p class="sub">Voos Emirates · Grande Museu Egípcio · João e Vera ao lado de vocês do embarque ao regresso.</p>
     </section>
 
@@ -497,7 +531,7 @@
           <article class="feature-card reveal"><span class="feature-number">07</span><h3>Grande Museu Egípcio + Gizé</h3><p>Pirâmides, Esfinge e Grande Museu Egípcio no mesmo dia, conforme o programa.</p></article>
           <article class="feature-card reveal"><span class="feature-number">08</span><h3>Refeições nos passeios</h3><p>6 almoços e 4 jantares além do cruzeiro e do All Inclusive.</p></article>
         </div>
-        <div class="inclusions-cta reveal"><a class="btn btn-gold btn-whatsapp-track" data-location="inclusions" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero garantir minha vaga</a></div>
+        <div class="inclusions-cta reveal"><a class="btn btn-gold btn-whatsapp-track" data-location="inclusions" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Simular para 1 ou 2 pessoas</a></div>
       </div>
     </section>
 
@@ -529,7 +563,7 @@
           <p>Apresentar o Egito, para nós, é receber cada viajante. Estaremos no desembarque, nos templos e no regresso — um único canal de cuidado, em português, do Brasil até o Cairo.</p>
           <p>Do embarque ao retorno, você viaja com acompanhamento próximo, suporte no destino e a tranquilidade de ter uma equipe ao seu lado em cada etapa.</p>
           <p class="signature-quote">O nosso desejo é apresentar-lhe o Egito da mesma forma como gostaríamos que alguém especial o revelasse para nós.</p>
-          <a class="btn btn-gold btn-whatsapp-track" data-location="hosts" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Falar com João e Vera</a>
+          <a class="btn btn-gold btn-whatsapp-track" data-location="hosts" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Falar com João e Vera</a>
         </div>
       </div>
     </section>
@@ -692,7 +726,7 @@
           <p>Valores por pessoa. Cotação de referência · dólar turismo R$ 5,17.</p>
         </div>
         <div class="pricing-grid">
-          <article class="pricing-card reveal">
+          <article class="pricing-card featured reveal">
             <span class="pricing-badge">Etapa 1 · Reserva</span>
             <h3 class="pricing-title">Entrada</h3>
             <p class="pricing-amount-main">USD 450</p>
@@ -714,12 +748,13 @@
             <p class="pricing-desc">Pago em espécie no Egito, na chegada.</p>
           </article>
         </div>
+        <p class="pricing-ease">A entrada de USD 450 garante a vaga. O aéreo e o saldo terrestre podem ser organizados ao longo dos meses até março de 2027.</p>
         <div class="total-bar">
-          <span>Referência total por pessoa</span>
+          <span>Referência total por pessoa, só para planejamento</span>
           <strong>R$ 20.091,38</strong>
         </div>
         <div class="pricing-cta">
-          <a class="btn btn-gold btn-whatsapp-track" data-location="pricing" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Quero minha simulação no WhatsApp</a>
+          <a class="btn btn-gold btn-whatsapp-track" data-location="pricing" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Quero minha simulação no WhatsApp</a>
           <p class="pricing-disclaimer">Valor total estimado considerando USD 1 = R$ 5,17 e passagem aérea a partir de R$ 6.933,73. O valor em reais pode variar conforme a cotação do dólar e a tarifa aérea disponível no momento da emissão.</p>
         </div>
       </div>
@@ -728,8 +763,8 @@
     <section class="closing-block">
       <span class="eyebrow">Um convite</span>
       <h2>Seu encontro com o Egito começa no WhatsApp.</h2>
-      <p>Contrato + sinal de USD 450. Grupo limitado para março de 2027.</p>
-      <a class="btn btn-gold btn-whatsapp-track" data-location="closing" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">Falar com João e Vera agora</a>
+      <p>Contrato + sinal de USD 450. Grupo de 30 viajantes, restam 17 vagas.</p>
+      <a class="btn btn-gold btn-whatsapp-track" data-location="closing" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">Quero garantir minha vaga</a>
     </section>
 
     <section class="section faq" id="duvidas">
@@ -762,9 +797,9 @@
         </div>
         <div class="footer-col">
           <h3>Comunicação</h3>
-          <p>+55 17 99105-4452</p>
+          <a href="tel:+5517991054452">+55 17 99105-4452</a>
           <a href="mailto:brasilegitoturismo@gmail.com">brasilegitoturismo@gmail.com</a>
-          <a class="footer-wa btn-whatsapp-track" data-location="footer" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F">WhatsApp</a>
+          <a class="footer-wa btn-whatsapp-track" data-location="footer" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F">WhatsApp</a>
         </div>
         <div class="footer-col">
           <h3>Sede</h3>
@@ -780,7 +815,7 @@
     </div>
   </footer>
 
-  <a class="whatsapp-fixed btn-whatsapp-track" data-location="floating_button" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20Mar%C3%A7o%202027%20e%20quero%20viajar%20com%20voc%C3%AAs.%20Podem%20me%20passar%20os%20valores%20para%201%20ou%202%20pessoas%3F" aria-label="Entrar em contato via WhatsApp">
+  <a class="whatsapp-fixed btn-whatsapp-track" data-location="floating_button" href="https://wa.me/5517991054452?text=Ol%C3%A1%2C%20Jo%C3%A3o%20e%20Vera!%20Vi%20a%20p%C3%A1gina%20do%20Egito%20em%20mar%C3%A7o%20de%202027.%20Podem%20me%20explicar%20o%20roteiro%20e%20como%20fica%20o%20pagamento%20para%201%20ou%202%20pessoas%3F" aria-label="Entrar em contato via WhatsApp">
     <div class="whatsapp-balloon">Fale com João e Vera</div>
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4a11.5 11.5 0 1 1 9.4 5.4zm6.3-8.6c-.3-.2-2-.1-2.3-.2-.3 0-.5.2-.7.5s-.8 1-.9 1.2c-.2.2-.4.2-.7.1a9 9 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5a.6.6 0 0 0 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7c0 1.6 1.2 3.1 1.4 3.3.1.3 2.3 3.6 5.6 5 3.3 1.4 3.3.9 3.9.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>
   </a>
@@ -791,7 +826,21 @@
       const menu = document.querySelector('.menu-toggle');
       const nav = document.querySelector('#nav');
       const navWa = document.querySelector('#nav-wa');
+      const announcement = document.querySelector('.announcement');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let lockedScroll = 0;
+
+      if (menu.dataset.bound === '1') return;
+      menu.dataset.bound = '1';
+
+      const syncAnnounce = () => {
+        if (!announcement) return;
+        document.documentElement.style.setProperty('--announce-h', announcement.offsetHeight + 'px');
+      };
+      syncAnnounce();
+      window.addEventListener('resize', syncAnnounce, { passive: true });
+      window.addEventListener('orientationchange', syncAnnounce);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncAnnounce);
 
       const setHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
       setHeader();
@@ -802,19 +851,32 @@
       syncNavWa();
       mq.addEventListener('change', syncNavWa);
 
+      const unlockScroll = () => {
+        document.documentElement.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+        document.body.style.top = '';
+        window.scrollTo(0, lockedScroll);
+      };
       const closeMenu = () => {
         nav.classList.remove('open');
         menu.classList.remove('open');
         menu.setAttribute('aria-expanded', 'false');
         menu.setAttribute('aria-label', 'Abrir menu');
-        document.body.classList.remove('menu-open');
+        unlockScroll();
       };
       menu.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
         menu.classList.toggle('open', isOpen);
         menu.setAttribute('aria-expanded', String(isOpen));
         menu.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-        document.body.classList.toggle('menu-open', isOpen);
+        if (isOpen) {
+          lockedScroll = window.scrollY;
+          document.body.style.top = '-' + lockedScroll + 'px';
+          document.documentElement.classList.add('menu-open');
+          document.body.classList.add('menu-open');
+        } else {
+          unlockScroll();
+        }
       });
       nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
       document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
@@ -842,6 +904,7 @@
         });
       });
 
+      const coarse = window.matchMedia('(pointer: coarse)').matches;
       document.querySelectorAll('.btn-whatsapp-track').forEach(btn => {
         btn.addEventListener('click', (event) => {
           event.preventDefault();
@@ -859,9 +922,13 @@
             fbq('track', 'Contact');
             fbq('trackCustom', 'WhatsAppClick', { location: location });
           }
+          if (coarse) {
+            window.location.href = whatsappUrl;
+            return;
+          }
           setTimeout(() => {
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-          }, 400);
+          }, 250);
         });
       });
     })();
