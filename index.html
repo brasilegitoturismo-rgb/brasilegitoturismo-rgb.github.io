@@ -433,6 +433,24 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
     }
+
+    /* Refinamento responsivo da faixa de oferta e do botão de contato — 31/10/2026 */
+    .offer-strip .lead span + span::before { content: ' · '; }
+    @media (max-width: 680px) {
+      .offer-strip { padding: 1.65rem 1.15rem 1.75rem; }
+      .offer-strip .lead { font-size: clamp(.88rem, 3.65vw, 1.05rem); line-height: 1.6; max-width: 32rem; margin-inline: auto; }
+      .offer-strip .lead span { display: block; }
+      .offer-strip .lead span + span::before { content: none; }
+      .offer-strip .lead span:nth-child(2) { font-weight: 600; }
+      .offer-strip .sub { font-size: clamp(.83rem, 3.6vw, .95rem); line-height: 1.65; margin: .75rem auto 0; max-width: 32rem; text-wrap: pretty; }
+      .fact { padding: 1.3rem .55rem; min-width: 0; }
+      .fact strong { font-size: clamp(1.6rem, 7vw, 2.1rem); }
+      .fact span { display: block; font-size: clamp(.65rem, 2.65vw, .75rem); line-height: 1.45; letter-spacing: .06em; overflow-wrap: normal; }
+      .intro-copy h2 { font-size: clamp(1.75rem, 7.5vw, 2.4rem); line-height: 1.15; overflow-wrap: break-word; }
+      .whatsapp-fixed { width: 52px; height: 52px; right: calc(14px + env(safe-area-inset-right)); bottom: calc(14px + env(safe-area-inset-bottom)); }
+      .whatsapp-fixed svg { width: 27px; height: 27px; }
+      .whatsapp-balloon { display: none; }
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"TravelAgency","@id":"https://brasilegitoturismo.com/#agencia","name":"Brasil Egito Turismo","url":"https://brasilegitoturismo.com/","email":"brasilegitoturismo@gmail.com","telephone":"+5517991054452","address":{"@type":"PostalAddress","streetAddress":"Rodovia Luiz Carlos Brandolezi, km 07","addressLocality":"Potirendaba","addressRegion":"SP","addressCountry":"BR"}},{"@type":"TouristTrip","name":"Egito Completo — Março 2027","description":"Grupo saindo do Brasil em 16 de março de 2027, no Egito de 17 a 28 e retorno no dia 29. 11 noites com João e Vera, guia em português, cruzeiro no Nilo e Hurghada All Inclusive.","provider":{"@id":"https://brasilegitoturismo.com/#agencia"},"offers":{"@type":"Offer","price":"21952.90","priceCurrency":"BRL","availability":"https://schema.org/LimitedAvailability","url":"https://brasilegitoturismo.com/#investimento","description":"Entrada para reservar a vaga. Grupo de 30 viajantes, restam 14."}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona o visto para o Egito?","acceptedAnswer":{"@type":"Answer","text":"O visto é na chegada, no aeroporto do Cairo (cerca de USD 25). A equipe local presta assistência VIP durante o processo de chegada."}},{"@type":"Question","name":"A passagem aérea internacional está inclusa?","acceptedAnswer":{"@type":"Answer","text":"Sim. As passagens aéreas internacionais estão incluídas, com voos Emirates. Embarque no Brasil em 16 de março e retorno no dia 29."}},{"@type":"Question","name":"O Grande Museu Egípcio está confirmado?","acceptedAnswer":{"@type":"Answer","text":"Sim. A visita do dia 18 é ao Grande Museu Egípcio, juntamente com as Pirâmides e a Esfinge."}},{"@type":"Question","name":"Posso viajar sozinho?","acceptedAnswer":{"@type":"Answer","text":"Sim. Há opção de quarto individual com acréscimo ou acomodação dupla compartilhada com outro integrante do grupo."}},{"@type":"Question","name":"Quais documentos preciso?","acceptedAnswer":{"@type":"Answer","text":"Passaporte com validade mínima de seis meses após a entrada no Egito e certificado internacional de vacinação contra a febre amarela."}},{"@type":"Question","name":"Como reservo?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp. A entrada de USD 450 garante a vaga no grupo de março de 2027."}}]}]}
@@ -559,7 +577,7 @@
     </section>
 
     <section class="offer-strip">
-      <p class="lead">Saída confirmada · restam 14 vagas de 30 · reserva com USD 450</p>
+      <p class="lead"><span>Saída confirmada</span><span>Restam 14 vagas de 30</span><span>Reserva com USD 450</span></p>
       <p class="sub">Voos Emirates · Grande Museu Egípcio · João e Vera ao lado de vocês do embarque ao regresso.</p>
     </section>
 
